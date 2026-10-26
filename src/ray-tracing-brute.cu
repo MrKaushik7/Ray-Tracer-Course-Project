@@ -263,7 +263,12 @@ __global__ void ray_trace(const Sphere* scene, unsigned char* img, Vec3 camera, 
 }
 
 int main() {
-
+    Sphere h_scene[] = {
+    { Vec3(0, -1000.5f, -1), 1000.0f, Vec3(0.5f, 0.5f, 0.5f), 0.0f, true  }, // floor
+    { Vec3(0,     0.0f, -1),    0.5f, Vec3(0.9f, 0.2f, 0.2f), 0.0f, false }, // red
+    { Vec3(-1.1f, 0.0f, -1),    0.5f, Vec3(0.2f, 0.7f, 0.3f), 0.0f, false }, // green
+    { Vec3( 1.1f, 0.0f, -1),    0.5f, Vec3(0.2f, 0.4f, 0.9f), 0.0f, false }, // blue
+    };
 
     int num_spheres = sizeof(h_scene) / sizeof(h_scene[0]);
 
