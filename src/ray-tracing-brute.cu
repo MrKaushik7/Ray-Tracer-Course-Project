@@ -23,6 +23,7 @@ __host__ void kernelTimer(
     std::string fileName,
     int W,
     int H,
+    int nsph,
     int measureRounds = 10
 ) {
 
@@ -32,7 +33,7 @@ __host__ void kernelTimer(
     }
 
     std::string fTxt = fileName + ".txt";
-    std::ofstream output(fTxt);
+    std::ofstream output(fTxt, std::ios::app);
 
     if(output.is_open()) {
         cudaEvent_t startEvent, stopEvent;
@@ -52,7 +53,7 @@ __host__ void kernelTimer(
         float ms = 0.0f;
         cudaErrCheck(cudaEventElapsedTime(&ms, startEvent, stopEvent));
 
-        output << "Average kernel time(ms): " << ms / (float)measureRounds << ", " << W << "x" << H << " resolution\n";
+        output << "Average kernel time(ms): " << ms / (float)measureRounds << ", " << W << "x" << H << " resolution, number of spheres: " << nsph << "\n";
 
         cudaErrCheck(cudaEventDestroy(startEvent));
         cudaErrCheck(cudaEventDestroy(stopEvent));
@@ -233,7 +234,7 @@ __device__ Vec3 accumulatedColour(const Sphere* scene, Vec3 light, Vec3 camera, 
 
 __device__ Vec3 rayColour(const Sphere* scene, Vec3 camera, Vec3 dirn, int num_spheres) {
     // x = right, y = up, z = toward the camera.
-    Vec3 light(4, 6, 2);
+    Vec3 light(4, 6, -20);
     float tClosest;
     int firstCollision = rayCollisionPoint(scene, camera, dirn, tClosest, num_spheres);
 
@@ -263,14 +264,32 @@ __global__ void ray_trace(const Sphere* scene, unsigned char* img, Vec3 camera, 
 }
 
 int main() {
-    Sphere h_scene[] = {
-    { Vec3(0, -1000.5f, -1), 1000.0f, Vec3(0.5f, 0.5f, 0.5f), 0.0f, true  }, // floor
-    { Vec3(0,     0.0f, -1),    0.5f, Vec3(0.9f, 0.2f, 0.2f), 0.0f, false }, // red
-    { Vec3(-1.1f, 0.0f, -1),    0.5f, Vec3(0.2f, 0.7f, 0.3f), 0.0f, false }, // green
-    { Vec3( 1.1f, 0.0f, -1),    0.5f, Vec3(0.2f, 0.4f, 0.9f), 0.0f, false }, // blue
-    };
+    int num_spheres = 0;
+    std::cin >> num_spheres;
+    Sphere h_scene[num_spheres];
+    for(int i = 0; i < num_spheres; i++) {
+        //center, radius, colour, reflectivity, isFloor
+        Sphere sph;
+        float center_x, center_y, center_z;
+        float radius;
+        float colour_x, colour_y, colour_z;
+        float reflectivity;
+        bool isFloor;
 
-    int num_spheres = sizeof(h_scene) / sizeof(h_scene[0]);
+        std::cin >> center_x >> center_y >> center_z;
+        std::cin >> radius;
+        std::cin >> colour_x >> colour_y >> colour_z;
+        std::cin >> reflectivity;
+        std::cin >> isFloor;
+
+        sph.center = Vec3(center_x, center_y, center_z);
+        sph.radius = radius;
+        sph.colour = Vec3(colour_x, colour_y, colour_z);
+        sph.reflectivity = reflectivity;
+        sph.isFloor = isFloor;
+
+        h_scene[i] = sph;
+    }
 
     Sphere* scene;
     cudaErrCheck(cudaMalloc((void**)&scene, sizeof(h_scene)));
@@ -300,12 +319,12 @@ int main() {
 
     kernelTimer(
         [&](){ray_trace<<<blocks, threads>>>(scene, d_image, camera, aspect_ratio, H, W, num_spheres);},
-        "basicRayTracingBenchmark",
+        "RayTracingBenchmarks",
         W,
         H,
+        nsph,
         20
     );        
-
 
     cudaErrCheck(cudaMemcpy(image, d_image, H * W * 3 * sizeof(unsigned char), cudaMemcpyDeviceToHost));
 
