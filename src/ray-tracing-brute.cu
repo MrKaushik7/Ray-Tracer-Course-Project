@@ -322,7 +322,7 @@ int main() {
         "RayTracingBenchmarks",
         W,
         H,
-        nsph,
+        num_spheres,
         20
     );        
 
