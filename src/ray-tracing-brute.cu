@@ -6,7 +6,6 @@
 #include <fstream>
 
 #define MISS -1
-#define threads_per_block 16
 #define bounces 5
 #define eps 0.001f
 #define min_throughput 0.001f
@@ -306,11 +305,13 @@ int main() {
     Vec3 camera(0.0f, 1.2f, 4.0f);
     float aspect_ratio = (float)W/H;
 
-    int blocks_x = (W + threads_per_block - 1) / threads_per_block;
-    int blocks_y = (H + threads_per_block - 1) / threads_per_block;
+    dim3 threads(8, 8);
+
+    int blocks_x = (W + threads.x - 1) / threads.x;
+    int blocks_y = (H + threads.y - 1) / threads.y;
 
     dim3 blocks(blocks_x, blocks_y, 1);
-    dim3 threads(threads_per_block, threads_per_block);
+
 
     //warm up gpu, pay initialization costs
     for(int i = 0; i < 5; i++) {

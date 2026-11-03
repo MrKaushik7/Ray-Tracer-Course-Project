@@ -1,0 +1,14 @@
+Average kernel time(ms): 1.3652, 800x600 resolution, number of spheres: 100 thread_dim: 8x8
+Average kernel time(ms): 65.945, 800x600 resolution, number of spheres: 5000 thread_dim: 8x8
+Average kernel time(ms): 1.38251, 800x600 resolution, number of spheres: 100 thread_dim: 16x8
+Average kernel time(ms): 67.5369, 800x600 resolution, number of spheres: 5000 thread_dim: 16x8
+Average kernel time(ms): 1.40697, 800x600 resolution, number of spheres: 100 thread_dim: 32x4
+Average kernel time(ms): 67.0088, 800x600 resolution, number of spheres: 5000 thread_dim: 32x4
+Average kernel time(ms): 1.23566, 800x600 resolution, number of spheres: 100 thread_dim: 32x8
+Average kernel time(ms): 71.6854, 800x600 resolution, number of spheres: 5000 thread_dim: 32x8
+Average kernel time(ms): 1.13866, 800x600 resolution, number of spheres: 100 thread_dim: 32x16
+Average kernel time(ms): 72.7389, 800x600 resolution, number of spheres: 5000 thread_dim: 32x16
+
+//retry 32x8
+Average kernel time(ms): 1.0562, 800x600 resolution, number of spheres: 100 thread_dim: 32x8
+Average kernel time(ms): 70.7801, 800x600 resolution, number of spheres: 5000 thread_dim: 32x8

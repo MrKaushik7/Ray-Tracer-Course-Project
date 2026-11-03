@@ -1,0 +1,8 @@
+Average kernel time(ms): 6.70401, 800x600 resolution, number of spheres: 1000 thread_dim: 16x16
+Average kernel time(ms): 9.26443, 800x600 resolution, number of spheres: 1000 thread_dim: 16x16
+Average kernel time(ms): 9.52934, 800x600 resolution, number of spheres: 1000 thread_dim: 16x16
+Average kernel time(ms): 11.0217, 800x600 resolution, number of spheres: 1000 thread_dim: 16x16
+Average kernel time(ms): 11.5077, 800x600 resolution, number of spheres: 1000 thread_dim: 16x16
+Average kernel time(ms): 10.7176, 800x600 resolution, number of spheres: 1000 thread_dim: 16x16
+Average kernel time(ms): 10.7896, 800x600 resolution, number of spheres: 1000 thread_dim: 16x16
+

@@ -1,0 +1,2172 @@
+[12148] raytracer@127.0.0.1
+  ray_trace(const Sphere *, unsigned char *, Vec3, float, int, int, int, float4 *) (50, 38, 1)x(16, 16, 1), Context 1, Stream 7, Device 0, CC 7.5
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         5.02
+    SM Frequency                    Mhz       584.97
+    Elapsed Cycles                cycle      796,455
+    Memory Throughput                 %        37.88
+    DRAM Throughput                   %         0.45
+    Duration                         ms         1.36
+    L1/TEX Cache Throughput           %        75.75
+    Waves Per SM                               11.88
+    L2 Cache Throughput               %         0.34
+    SM Active Cycles              cycle   789,646.85
+    Compute (SM) Throughput           %        70.53
+    ----------------------- ----------- ------------
+
+    GPU Throughput Chart
+    Table Name : GPU Throughput
+    ---------------- ----------- ------------
+    Metric Name      Metric Unit Metric Value
+    ---------------- ----------- ------------
+    Memory [%]                 %        37.88
+    Compute (SM) [%]           %        70.53
+    ---------------- ----------- ------------
+
+    GPU Throughput Breakdown
+    Table Name : Compute Throughput Breakdown
+    -------------------------------------------- ----------- ------------
+    Metric Name                                  Metric Unit Metric Value
+    -------------------------------------------- ----------- ------------
+    SM: Inst Executed                                      %        70.53
+    SM: Issue Active                                       %        70.53
+    SM: Pipe Fma Cycles Active                             %        69.25
+    SM: Pipe Alu Cycles Active                             %        40.49
+    SM: Inst Executed Pipe Cbu Pred On Any                 %        31.48
+    SM: Inst Executed Pipe Lsu                             %        20.29
+    SM: Mio2rf Writeback Active                            %        19.61
+    SM: Mio Inst Issued                                    %         6.83
+    SM: Inst Executed Pipe Xu                              %         2.64
+    SM: Inst Executed Pipe Adu                             %         0.19
+    SM: Mio Pq Read Cycles Active                          %         0.19
+    SM: Mio Pq Write Cycles Active                         %         0.14
+    SM: Inst Executed Pipe Uniform                         %         0.02
+    IDC: Request Cycles Active                             %            0
+    SM: Inst Executed Pipe Fp16                            %            0
+    SM: Inst Executed Pipe Ipa                             %            0
+    SM: Inst Executed Pipe Tex                             %            0
+    SM: Instruction Throughput Internal Activity           %            0
+    SM: Memory Throughput Internal Activity                %            0
+    SM: Pipe Fp64 Cycles Active                            %            0
+    SM: Pipe Shared Cycles Active                          %            0
+    SM: Pipe Tensor Cycles Active                          %            0
+    -------------------------------------------- ----------- ------------
+
+    Table Name : Memory Throughput Breakdown
+    -------------------------------------------------------- ----------- ------------
+    Metric Name                                              Metric Unit Metric Value
+    -------------------------------------------------------- ----------- ------------
+    L1: Data Pipe Lsu Wavefronts                                       %        37.88
+    L1: Lsu Writeback Active                                           %        37.55
+    L1: Lsuin Requests                                                 %        20.29
+    L1: Data Bank Reads                                                %         2.41
+    DRAM: Cycles Active                                                %         0.45
+    L1: M L1tex2xbar Req Cycles Active                                 %         0.36
+    L2: Xbar2lts Cycles Active                                         %         0.34
+    DRAM: Dram Sectors                                                 %         0.33
+    L2: T Sectors                                                      %         0.24
+    GPU: Compute Memory Access Throughput Internal Activity            %         0.15
+    L2: T Tag Requests                                                 %         0.15
+    L2: D Sectors                                                      %         0.11
+    L2: D Sectors Fill Device                                          %         0.06
+    L1: Data Bank Writes                                               %         0.05
+    L2: Lts2xbar Cycles Active                                         %         0.03
+    L1: M Xbar2l1tex Read Sectors                                      %         0.01
+    GPU: Compute Memory Request Throughput Internal Activity           %            0
+    L1: Data Pipe Tex Wavefronts                                       %            0
+    L1: F Wavefronts                                                   %         0.00
+    L1: Tex Writeback Active                                           %            0
+    L1: Texin Sm2tex Req Cycles Active                                 %         0.00
+    L2: D Atomic Input Cycles Active                                   %            0
+    L2: D Sectors Fill Sysmem                                          %         0.00
+    -------------------------------------------------------- ----------- ------------
+
+    OPT   Compute is more heavily utilized than Memory: Look at the Compute Workload Analysis section to see what the   
+          compute pipelines are spending their time doing. Also, consider whether any computation is redundant and      
+          could be reduced or moved to look-up tables.                                                                  
+
+    Section: GPU Speed Of Light Roofline Chart
+    ----------------------------------------------------------- ----------- ------------
+    Metric Name                                                 Metric Unit Metric Value
+    ----------------------------------------------------------- ----------- ------------
+    Theoretical Predicated-On DFMA Thread Instructions Executed  inst/cycle           80
+    Theoretical Predicated-On FFMA Thread Instructions Executed  inst/cycle        2,560
+    Predicated-On DFMA Thread Instructions Executed Per Cycle    inst/cycle            0
+    Predicated-On FFMA Thread Instructions Executed Per Cycle    inst/cycle       735.88
+    ----------------------------------------------------------- ----------- ------------
+
+    GPU Throughput Rooflines
+    Table Name : Floating Point Operations Roofline
+    Single Precision Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On FFMA Operations        inst        5,120
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    Double Precision Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On DFMA Operations        inst          160
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    Single Precision Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On FFMA Operations Per Cycle                          inst     1,471.76
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On FADD Thread Instructions Executed Per Cycle  inst/cycle       480.81
+    Predicated-On FMUL Thread Instructions Executed Per Cycle  inst/cycle       368.30
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    Double Precision Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On DFMA Operations Per Cycle                          inst            0
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On DADD Thread Instructions Executed Per Cycle  inst/cycle            0
+    Predicated-On DMUL Thread Instructions Executed Per Cycle  inst/cycle            0
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    INF   The ratio of peak float (FP32) to double (FP64) performance on this device is 32:1. The workload achieved 45% 
+          of this device's FP32 peak performance and 0% of its FP64 peak performance. See the Profiling Guide           
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline) for more details on roofline      
+          analysis.                                                                                                     
+
+    Section: GPU Speed Of Light Hierarchical Roofline Chart (Double Precision)
+    ----------------------------------------------------------- ----------- ------------
+    Metric Name                                                 Metric Unit Metric Value
+    ----------------------------------------------------------- ----------- ------------
+    L1/TEX peak local/global writeback cycles                                         40
+    L1/TEX active local/global writeback cycles per second              Ghz         8.83
+    L2 peak writeback cycles                                                          32
+    L2 active writeback cycles per second                               Mhz         7.58
+    Theoretical Predicated-On DFMA Thread Instructions Executed  inst/cycle           80
+    Predicated-On DFMA Thread Instructions Executed Per Cycle    inst/cycle            0
+    ----------------------------------------------------------- ----------- ------------
+
+    Roofline Double Precision
+    Table Name : Floating Point Operations Roofline (Double Precision)
+    DRAM Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On DFMA Operations        inst          160
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On DFMA Operations        inst          160
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1 Roofline (Global/Local)
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On DFMA Operations        inst          160
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On DFMA Operations Per Cycle                          inst            0
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On DADD Thread Instructions Executed Per Cycle  inst/cycle            0
+    Predicated-On DMUL Thread Instructions Executed Per Cycle  inst/cycle            0
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On DFMA Operations Per Cycle                          inst            0
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On DADD Thread Instructions Executed Per Cycle  inst/cycle            0
+    Predicated-On DMUL Thread Instructions Executed Per Cycle  inst/cycle            0
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1 Achieved Value (Global/Local)
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On DFMA Operations Per Cycle                          inst            0
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On DADD Thread Instructions Executed Per Cycle  inst/cycle            0
+    Predicated-On DMUL Thread Instructions Executed Per Cycle  inst/cycle            0
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    --------------------------------- ----------- --------------------
+    Metric Name                       Metric Unit         Metric Value
+    --------------------------------- ----------- --------------------
+    L1 Cache Bandwidth (Global/Local)             1,129,944,251,198.65
+    --------------------------------- ----------- --------------------
+
+    Section: GPU Speed Of Light Hierarchical Roofline Chart (Half Precision)
+    ----------------------------------------------------------- ----------- ------------
+    Metric Name                                                 Metric Unit Metric Value
+    ----------------------------------------------------------- ----------- ------------
+    L1/TEX peak local/global writeback cycles                                         40
+    L1/TEX active local/global writeback cycles per second              Ghz         8.83
+    L2 peak writeback cycles                                                          32
+    L2 active writeback cycles per second                               Mhz         7.58
+    Theoretical Predicated-On HFMA Thread Instructions Executed  inst/cycle        2,560
+    Predicated-On HADD Thread Instructions Executed Per Cycle    inst/cycle            0
+    Predicated-On HFMA Thread Instructions Executed Per Cycle    inst/cycle            0
+    Predicated-On HMUL Thread Instructions Executed Per Cycle    inst/cycle            0
+    ----------------------------------------------------------- ----------- ------------
+
+    Roofline Half Precision
+    Table Name : Floating Point Operations Roofline (Half Precision)
+    DRAM Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On HFMA Operations        inst       10,240
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On HFMA Operations        inst       10,240
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1 Roofline (Global/Local)
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On HFMA Operations        inst       10,240
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On HADD Thread Instructions Executed Per Cycle        inst            0
+    Predicated-On HFMA Operations Per Cycle                          inst            0
+    Predicated-On HMUL Thread Instructions Executed Per Cycle        inst            0
+    SM Frequency                                                      Mhz       589.24
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On HADD Thread Instructions Executed Per Cycle        inst            0
+    Predicated-On HFMA Operations Per Cycle                          inst            0
+    Predicated-On HMUL Thread Instructions Executed Per Cycle        inst            0
+    SM Frequency                                                      Mhz       589.24
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1 Achieved Value (Global/Local)
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On HADD Thread Instructions Executed Per Cycle        inst            0
+    Predicated-On HFMA Operations Per Cycle                          inst            0
+    Predicated-On HMUL Thread Instructions Executed Per Cycle        inst            0
+    SM Frequency                                                      Mhz       589.24
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    --------------------------------- ----------- --------------------
+    Metric Name                       Metric Unit         Metric Value
+    --------------------------------- ----------- --------------------
+    L1 Cache Bandwidth (Global/Local)             1,129,944,251,198.65
+    --------------------------------- ----------- --------------------
+
+    Section: GPU Speed Of Light Hierarchical Roofline Chart (Single Precision)
+    ----------------------------------------------------------- ----------- ------------
+    Metric Name                                                 Metric Unit Metric Value
+    ----------------------------------------------------------- ----------- ------------
+    L1/TEX peak local/global writeback cycles                                         40
+    L1/TEX active local/global writeback cycles per second              Ghz         8.83
+    L2 peak writeback cycles                                                          32
+    L2 active writeback cycles per second                               Mhz         7.58
+    Theoretical Predicated-On FFMA Thread Instructions Executed  inst/cycle        2,560
+    Predicated-On FFMA Thread Instructions Executed Per Cycle    inst/cycle       735.88
+    ----------------------------------------------------------- ----------- ------------
+
+    Roofline Single Precision
+    Table Name : Floating Point Operations Roofline (Single Precision)
+    DRAM Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On FFMA Operations        inst        5,120
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Roofline
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On FFMA Operations        inst        5,120
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1 Roofline (Global/Local)
+    Peak Work
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical Predicated-On FFMA Operations        inst        5,120
+    SM Frequency                                      Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On FFMA Operations Per Cycle                          inst     1,471.76
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On FADD Thread Instructions Executed Per Cycle  inst/cycle       480.81
+    Predicated-On FMUL Thread Instructions Executed Per Cycle  inst/cycle       368.30
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Achieved Value
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On FFMA Operations Per Cycle                          inst     1,471.76
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On FADD Thread Instructions Executed Per Cycle  inst/cycle       480.81
+    Predicated-On FMUL Thread Instructions Executed Per Cycle  inst/cycle       368.30
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1 Achieved Value (Global/Local)
+    Achieved Work
+    --------------------------------------------------------- ----------- ------------
+    Metric Name                                               Metric Unit Metric Value
+    --------------------------------------------------------- ----------- ------------
+    Predicated-On FFMA Operations Per Cycle                          inst     1,471.76
+    SM Frequency                                                      Mhz       589.24
+    Predicated-On FADD Thread Instructions Executed Per Cycle  inst/cycle       480.81
+    Predicated-On FMUL Thread Instructions Executed Per Cycle  inst/cycle       368.30
+    --------------------------------------------------------- ----------- ------------
+
+    Achieved Traffic
+    --------------------------------- ----------- --------------------
+    Metric Name                       Metric Unit         Metric Value
+    --------------------------------- ----------- --------------------
+    L1 Cache Bandwidth (Global/Local)             1,129,944,251,198.65
+    --------------------------------- ----------- --------------------
+
+    Section: GPU Speed Of Light Hierarchical Roofline Chart (Tensor Core)
+    ------------------------------------------------------ ----------- ------------
+    Metric Name                                            Metric Unit Metric Value
+    ------------------------------------------------------ ----------- ------------
+    L1/TEX peak local/global writeback cycles                                    40
+    L1/TEX active local/global writeback cycles per second         Ghz         8.83
+    L2 peak writeback cycles                                                     32
+    L2 active writeback cycles per second                          Mhz         7.58
+    ------------------------------------------------------ ----------- ------------
+
+    Roofline Tensor Core
+    Table Name : Tensor Core Operations Roofline
+    DRAM Roofline (Src:fp16,bf16,tf32 Dst:fp32)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   40,960
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Cache Roofline (Src:fp16,bf16,tf32 Dst:fp32)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   40,960
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1/TEX Cache Roofline (Src:fp16,bf16,tf32 Dst:fp32)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   40,960
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Roofline (Src:fp16 Dst:fp16)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   40,960
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Cache Roofline (Src:fp16 Dst:fp16)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   40,960
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1/TEX Cache Roofline (Src:fp16 Dst:fp16)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   40,960
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Roofline (Src:int1)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                  655,360
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Cache Roofline (Src:int1)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                  655,360
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1/TEX Cache Roofline (Src:int1)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                  655,360
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Roofline (Src:int4)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                  163,840
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Cache Roofline (Src:int4)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                  163,840
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1/TEX Cache Roofline (Src:int4)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                  163,840
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Roofline (Src:int8)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   81,920
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    --------------------------------- ----------- ------------
+    Metric Name                       Metric Unit Metric Value
+    --------------------------------- ----------- ------------
+    Theoretical DRAM Bytes Accessible  byte/cycle           64
+    DRAM Frequency                            Ghz         5.02
+    --------------------------------- ----------- ------------
+
+    L2 Cache Roofline (Src:int8)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   81,920
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ------------------------------------- ----------- ------------
+    Metric Name                           Metric Unit Metric Value
+    ------------------------------------- ----------- ------------
+    Theoretical L2 Cache Bytes Accessible       Kbyte         1.02
+    L2 Cache Frequency                            Mhz       854.86
+    ------------------------------------- ----------- ------------
+
+    L1/TEX Cache Roofline (Src:int8)
+    Peak Work
+    ----------------------------- ----------- ------------
+    Metric Name                   Metric Unit Metric Value
+    ----------------------------- ----------- ------------
+    SM Frequency                          Mhz       589.24
+    Theoretical Tensor Operations                   81,920
+    ----------------------------- ----------- ------------
+
+    Peak Traffic
+    ----------------------------------------- ----------- ------------
+    Metric Name                               Metric Unit Metric Value
+    ----------------------------------------- ----------- ------------
+    Theoretical L1/TEX Cache Bytes Accessible                    5,120
+    L1/TEX Cache Frequency                            Mhz       589.24
+    ----------------------------------------- ----------- ------------
+
+    DRAM Achieved Value (Src:fp16,bf16,tf32 Dst:fp32)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Cache Achieved Value (Src:fp16,bf16,tf32 Dst:fp32)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1/TEX Cache Achieved Value (Src:fp16,bf16,tf32 Dst:fp32)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ---------------------- ----------- --------------------
+    Metric Name            Metric Unit         Metric Value
+    ---------------------- ----------- --------------------
+    L1/TEX Cache Bandwidth             1,129,944,251,198.65
+    ---------------------- ----------- --------------------
+
+    DRAM Achieved Value (Src:fp16 Dst:fp16)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Cache Achieved Value (Src:fp16 Dst:fp16)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1/TEX Cache Achieved Value (Src:fp16 Dst:fp16)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ---------------------- ----------- --------------------
+    Metric Name            Metric Unit         Metric Value
+    ---------------------- ----------- --------------------
+    L1/TEX Cache Bandwidth             1,129,944,251,198.65
+    ---------------------- ----------- --------------------
+
+    DRAM Achieved Value (Src:int1)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Cache Achieved Value (Src:int1)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1/TEX Cache Achieved Value (Src:int1)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ---------------------- ----------- --------------------
+    Metric Name            Metric Unit         Metric Value
+    ---------------------- ----------- --------------------
+    L1/TEX Cache Bandwidth             1,129,944,251,198.65
+    ---------------------- ----------- --------------------
+
+    DRAM Achieved Value (Src:int4)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Cache Achieved Value (Src:int4)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1/TEX Cache Achieved Value (Src:int4)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ---------------------- ----------- --------------------
+    Metric Name            Metric Unit         Metric Value
+    ---------------------- ----------- --------------------
+    L1/TEX Cache Bandwidth             1,129,944,251,198.65
+    ---------------------- ----------- --------------------
+
+    DRAM Achieved Value (Src:int8)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    -------------- ----------- ------------
+    Metric Name    Metric Unit Metric Value
+    -------------- ----------- ------------
+    DRAM Bandwidth     Gbyte/s         1.46
+    -------------- ----------- ------------
+
+    L2 Cache Achieved Value (Src:int8)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    L2 Cache Bandwidth       Mbyte       242.50
+    ------------------ ----------- ------------
+
+    L1/TEX Cache Achieved Value (Src:int8)
+    Achieved Work
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    SM Frequency                        Mhz       589.24
+    Tensor Operations Per Cycle                        0
+    --------------------------- ----------- ------------
+
+    Achieved Traffic
+    ---------------------- ----------- --------------------
+    Metric Name            Metric Unit         Metric Value
+    ---------------------- ----------- --------------------
+    L1/TEX Cache Bandwidth             1,129,944,251,198.65
+    ---------------------- ----------- --------------------
+
+    --------------------------- ----------- ----------------------
+    Metric Name                 Metric Unit           Metric Value
+    --------------------------- ----------- ----------------------
+    Src:fp16,bf16,tf32 Dst:fp32                                  0
+    Src:fp16,bf16,tf32 Dst:fp32           %                      0
+    Src:fp16,bf16,tf32 Dst:fp32                             40,960
+    Src:fp16,bf16,tf32 Dst:fp32              24,135,406,599,605.15
+    Src:fp16,bf16,tf32 Dst:fp32                                  0
+    Src:fp16,bf16,tf32 Dst:fp32                                  0
+    Src:fp16 Dst:fp16                                            0
+    Src:fp16 Dst:fp16                     %                      0
+    Src:fp16 Dst:fp16                                       40,960
+    Src:fp16 Dst:fp16                        24,135,406,599,605.15
+    Src:fp16 Dst:fp16                                            0
+    Src:fp16 Dst:fp16                                            0
+    Src:int1                                                     0
+    Src:int1                              %                      0
+    Src:int1                                               655,360
+    Src:int1                                386,166,505,593,682.44
+    Src:int1                                                     0
+    Src:int1                                                     0
+    Src:int4                                                     0
+    Src:int4                              %                      0
+    Src:int4                                               163,840
+    Src:int4                                 96,541,626,398,420.61
+    Src:int4                                                     0
+    Src:int4                                                     0
+    Src:int8                                                     0
+    Src:int8                              %                      0
+    Src:int8                                                81,920
+    Src:int8                                 48,270,813,199,210.30
+    Src:int8                                                     0
+    Src:int8                                                     0
+    --------------------------- ----------- ----------------------
+
+    Section: PM Sampling
+    ------------------------- ----------- ------------
+    Metric Name               Metric Unit Metric Value
+    ------------------------- ----------- ------------
+    Elapsed Cycles                  cycle      796,455
+    Duration                           ms         1.36
+    Maximum Buffer Size             Kbyte       524.29
+    Maximum Sampling Interval       cycle       20,000
+    # Pass Groups                                    1
+    ------------------------- ----------- ------------
+
+    Section: Compute Workload Analysis
+    ---------------------- ----------- ------------
+    Metric Name            Metric Unit Metric Value
+    ---------------------- ----------- ------------
+    Executed Ipc Active     inst/cycle         2.87
+    Executed Ipc Elapsed    inst/cycle         2.82
+    Issue Slots Busy                 %        70.53
+    Issued Ipc Active       inst/cycle         2.87
+    Max. Issued Slots Busy           %        72.98
+    SM Busy                          %        70.53
+    ---------------------- ----------- ------------
+
+    Pipe Utilization (Elapsed Cycles)
+    Table Name : Pipe Utilization (% of elapsed cycles)
+    Table Description : Pipeline utilization based on the number of elapsed (all) cycles in the workload. This takes the rates of different instructions executing on the pipeline into account. For an instruction requiring 4 cycles to complete execution, the counter is increased by 1 for 4 cycles. Use this to understand the overall pipeline utilization over the entire workload.
+    -------------------- ----------- ------------
+    Metric Name          Metric Unit Metric Value
+    -------------------- ----------- ------------
+    FMA                            %        69.25
+    ALU                            %        40.49
+    FP64                           %            0
+    Shared (FP16+Tensor)           %            0
+    Tensor (All)                   %            0
+    Tensor (FP)                    %            0
+    Tensor (INT)                   %            0
+    -------------------- ----------- ------------
+
+    Table Name : Pipe Utilization (% of peak instructions executed over elapsed cycles)
+    Table Description : Pipeline utilization based on the number of executed instructions over elapsed (all) cycles. This does not account for any variation in instruction latencies for this pipeline. For an instruction requiring 4 cycles to complete execution, the counter is increased by 1 only. Use this to understand the composition of instructions/latencies (high-latency, low-rate instructions won't result in peak values).
+    ------------ ----------- ------------
+    Metric Name  Metric Unit Metric Value
+    ------------ ----------- ------------
+    FMA                    %        69.25
+    ALU                    %        40.49
+    LSU                    %        20.29
+    CBU                    %         7.88
+    XU                     %         2.64
+    ADU                    %         0.19
+    Uniform                %         0.02
+    FP16                   %            0
+    FP64                   %            0
+    Tensor (FP)            %            0
+    Tensor (INT)           %            0
+    TEX                    %            0
+    ------------ ----------- ------------
+
+    Pipe Utilization (Active Cycles)
+    Table Name : Pipe Utilization (% of active cycles)
+    Table Description : Pipeline utilization based on the number of cycles the pipeline was active. This takes the rates of different instructions executing on the pipeline into account. For an instruction requiring 4 cycles to complete execution, the counter is increased by 1 for 4 cycles. Use this to understand the pipeline utilization for the time it was active.
+    -------------------- ----------- ------------
+    Metric Name          Metric Unit Metric Value
+    -------------------- ----------- ------------
+    FMA                            %        70.36
+    ALU                            %        41.14
+    FP64                           %            0
+    Shared (FP16+Tensor)           %            0
+    Tensor (All)                   %            0
+    Tensor (FP)                    %            0
+    Tensor (INT)                   %            0
+    -------------------- ----------- ------------
+
+    Table Name : Pipe Utilization (% of peak instructions executed over active cycles)
+    Table Description : Pipeline utilization based on the number of executed instructions over active cycles. This does not account for any variation in instruction latencies for this pipeline. For an instruction requiring 4 cycles to complete execution, the counter is increased by 1 only. Use this to understand the composition of instructions/latencies (high-latency, low-rate instructions won't result in peak values).
+    ------------ ----------- ------------
+    Metric Name  Metric Unit Metric Value
+    ------------ ----------- ------------
+    FMA                    %        70.36
+    ALU                    %        41.14
+    LSU                    %        20.62
+    CBU                    %         8.01
+    XU                     %         2.68
+    ADU                    %         0.19
+    Uniform                %         0.02
+    FP16                   %            0
+    FP64                   %            0
+    Tensor (FP)            %            0
+    Tensor (INT)           %            0
+    TEX                    %            0
+    ------------ ----------- ------------
+
+    OPT   FMA is the highest-utilized pipeline (69.2%) based on elapsed cycles in the workload, taking into account the 
+          rates of its different instructions. It executes 32-bit floating point (FADD, FMUL, FMAD, ...) and integer    
+          (IMUL, IMAD) operations. The pipeline is well-utilized, but might become a bottleneck if more work is added.  
+          Based on the number of executed instructions, the highest utilized pipeline (69.2%) is FMA. It executes       
+          32-bit floating point (FADD, FMUL, FMAD, ...) and integer (IMUL, IMAD) operations. Comparing the two, the     
+          overall pipeline utilization appears to be caused by frequent, low-latency instructions. See the Profiling    
+          Guide (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-decoder) or hover over the    
+          pipeline name to understand the workloads handled by each pipeline. The Instruction Statistics section shows  
+          the mix of executed instructions for this workload. Check the Warp State Statistics section for which         
+          reasons cause warps to stall.                                                                                 
+
+    Section: Memory Workload Analysis
+    -------------------------------------- ----------- ------------
+    Metric Name                            Metric Unit Metric Value
+    -------------------------------------- ----------- ------------
+    Local Memory Spilling Requests                                0
+    Local Memory Spilling Request Overhead           %            0
+    Memory Throughput                          Gbyte/s         1.46
+    Mem Busy                                         %        37.88
+    Max Bandwidth                                    %        37.55
+    Instructions Executed                         inst   90,529,044
+    L1/TEX Hit Rate                                  %        98.21
+    L2 Hit Rate                                      %        74.48
+    Mem Pipes Busy                                   %        20.29
+    -------------------------------------- ----------- ------------
+
+    Section: Memory Workload Analysis Chart
+    ------------------------------------------------------- ----------- ------------
+    Metric Name                                             Metric Unit Metric Value
+    ------------------------------------------------------- ----------- ------------
+    DRAM Bandwidth                                              Gbyte/s         1.46
+    L2 Cache Sectors                                             sector       89,951
+    L2 Cache Sector Throughput For TEX                                %         0.21
+    Missed L2 Cache Sectors For TEX Accessing Peer Memory        sector            0
+    Missed L2 Cache Sectors For TEX Accessing System Memory      sector            0
+    Missed L2 Cache Sectors For TEX                              sector       21,601
+    PCIe read bandwidth                                         Kbyte/s       376.05
+    PCIe write bandwidth                                        Mbyte/s         1.88
+    ------------------------------------------------------- ----------- ------------
+
+    Memory Chart
+    Table Name : Memory Chart
+    ------------------------------------------------------------------------------------------------ ----------- ------------
+    Metric Name                                                                                      Metric Unit Metric Value
+    ------------------------------------------------------------------------------------------------ ----------- ------------
+    dram__bytes_read.sum                                                                                   Mbyte         1.86
+    dram__bytes_read.sum.pct_of_peak_sustained_elapsed                                                         %         0.42
+    dram__bytes_read.sum.per_second                                                                      Gbyte/s         1.36
+    dram__bytes_write.sum                                                                                  Kbyte       132.16
+    dram__bytes_write.sum.pct_of_peak_sustained_elapsed                                                        %         0.03
+    dram__bytes_write.sum.per_second                                                                     Mbyte/s        97.07
+    gcc__cache_requests_type_constant.sum                                                                request          480
+    gcc__cache_requests_type_constant.sum.pct_of_peak_sustained_elapsed                                        %         0.02
+    gcc__cache_requests_type_instruction.sum                                                             request       49,463
+    gcc__cache_requests_type_instruction.sum.pct_of_peak_sustained_elapsed                                     %         2.48
+    gcc__xbar2gcc_sectors.sum                                                                             sector        3,800
+    gcc__xbar2gcc_sectors.sum.pct_of_peak_sustained_elapsed                                                    %         0.10
+    idc__request_hit_rate.pct                                                                                  %            0
+    idc__requests.sum                                                                                                       0
+    idc__requests.sum.pct_of_peak_sustained_elapsed                                                            %            0
+    l1tex__data_pipe_lsu_wavefronts_mem_shared.sum.pct_of_peak_sustained_elapsed                               %         0.10
+    l1tex__m_l1tex2xbar_write_bytes.sum                                                                    Mbyte         2.38
+    l1tex__m_l1tex2xbar_write_bytes.sum.pct_of_peak_sustained_elapsed                                          %         0.23
+    l1tex__m_l1tex2xbar_write_bytes.sum.per_second                                                       Gbyte/s         1.75
+    l1tex__m_xbar2l1tex_read_bytes.sum                                                                     Kbyte        88.51
+    l1tex__m_xbar2l1tex_read_bytes.sum.pct_of_peak_sustained_elapsed                                           %         0.01
+    l1tex__m_xbar2l1tex_read_bytes.sum.per_second                                                        Mbyte/s        65.01
+    l1tex__t_requests_pipe_lsu_mem_global_op_atom.sum                                                                       0
+    l1tex__t_requests_pipe_lsu_mem_global_op_atom.sum.pct_of_peak_sustained_elapsed                            %            0
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                                                 3,179,058
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum.pct_of_peak_sustained_elapsed                              %         9.91
+    l1tex__t_requests_pipe_lsu_mem_global_op_red.sum                                                                        0
+    l1tex__t_requests_pipe_lsu_mem_global_op_red.sum.pct_of_peak_sustained_elapsed                             %            0
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                                                    45,000
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum.pct_of_peak_sustained_elapsed                              %         0.14
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                                                          0
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum.pct_of_peak_sustained_elapsed                               %            0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                                                          0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum.pct_of_peak_sustained_elapsed                               %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_atom.sum                                                                      0
+    l1tex__t_requests_pipe_tex_mem_surface_op_atom.sum.pct_of_peak_sustained_elapsed                           %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_ld.sum                                                                        0
+    l1tex__t_requests_pipe_tex_mem_surface_op_ld.sum.pct_of_peak_sustained_elapsed                             %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_red.sum                                                                       0
+    l1tex__t_requests_pipe_tex_mem_surface_op_red.sum.pct_of_peak_sustained_elapsed                            %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_st.sum                                                                        0
+    l1tex__t_requests_pipe_tex_mem_surface_op_st.sum.pct_of_peak_sustained_elapsed                             %            0
+    l1tex__t_requests_pipe_tex_mem_texture.sum                                                                              0
+    l1tex__t_requests_pipe_tex_mem_texture.sum.pct_of_peak_sustained_elapsed                                   %            0
+    l1tex__t_sector_hit_rate.pct                                                                               %        98.21
+    lts__t_sector_hit_rate.pct                                                                                 %        74.48
+    lts__t_sectors_srcunit_tex_aperture_peer_op_atom.sum                                                  sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_atom.sum.pct_of_peak_sustained_elapsed                         %            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_atom.sum.per_second                                     sector/s            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_read_lookup_miss.sum                                      sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_read_lookup_miss.sum.pct_of_peak_sustained_elapsed             %            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_read_lookup_miss.sum.per_second                         sector/s            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_red.sum                                                   sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_red.sum.pct_of_peak_sustained_elapsed                          %            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_red.sum.per_second                                      sector/s            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_write.sum                                                 sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_write.sum.pct_of_peak_sustained_elapsed                        %            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_write.sum.per_second                                    sector/s            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_atom.sum                                                sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_atom.sum.pct_of_peak_sustained_elapsed                       %            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_atom.sum.per_second                                   sector/s            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_read_lookup_miss.sum                                    sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_read_lookup_miss.sum.pct_of_peak_sustained_elapsed           %            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_read_lookup_miss.sum.per_second                       sector/s            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_red.sum                                                 sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_red.sum.pct_of_peak_sustained_elapsed                        %            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_red.sum.per_second                                    sector/s            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_write.sum                                               sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_write.sum.pct_of_peak_sustained_elapsed                      %            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_write.sum.per_second                                  sector/s            0
+    lts__t_sectors_srcunit_tex_op_read.avg.pct_of_peak_sustained_elapsed                                       %         0.01
+    lts__t_sectors_srcunit_tex_op_read.sum                                                                sector        2,754
+    lts__t_sectors_srcunit_tex_op_write.avg.pct_of_peak_sustained_elapsed                                      %         0.20
+    lts__t_sectors_srcunit_tex_op_write.sum                                                               sector       75,001
+    sm__icc_request_hit_rate.pct                                                                               %        99.69
+    sm__icc_requests.sum                                                                                   cycle    9,185,209
+    sm__icc_requests.sum.pct_of_peak_sustained_elapsed                                                         %        57.24
+    smsp__cycles_elapsed.sum                                                                               cycle  128,364,160
+    smsp__imc_request_hit_rate.pct                                                                             %        99.96
+    smsp__imc_requests.sum                                                                                 cycle    7,503,760
+    smsp__imc_requests.sum.pct_of_peak_sustained_elapsed                                                       %         5.85
+    smsp__inst_executed_op_generic_atom_dot_alu.sum                                                         inst            0
+    smsp__inst_executed_op_generic_atom_dot_alu.sum.pct_of_peak_sustained_elapsed                              %            0
+    smsp__inst_executed_op_generic_atom_dot_cas.sum                                                         inst            0
+    smsp__inst_executed_op_generic_atom_dot_cas.sum.pct_of_peak_sustained_elapsed                              %            0
+    smsp__inst_executed_op_global_red.sum                                                                   inst            0
+    smsp__inst_executed_op_global_red.sum.pct_of_peak_sustained_elapsed                                        %            0
+    smsp__inst_executed_op_ldsm.sum                                                                         inst            0
+    smsp__inst_executed_op_ldsm.sum.pct_of_peak_sustained_elapsed                                              %            0
+    smsp__inst_executed_op_shared_atom.sum                                                                  inst            0
+    smsp__inst_executed_op_shared_atom.sum.pct_of_peak_sustained_elapsed                                       %            0
+    smsp__inst_executed_op_surface_atom_dot_alu.sum                                                         inst            0
+    smsp__inst_executed_op_surface_atom_dot_alu.sum.pct_of_peak_sustained_elapsed                              %            0
+    smsp__inst_executed_op_surface_atom_dot_cas.sum                                                         inst            0
+    smsp__inst_executed_op_surface_atom_dot_cas.sum.pct_of_peak_sustained_elapsed                              %            0
+    smsp__inst_executed_op_surface_ld.sum                                                                   inst            0
+    smsp__inst_executed_op_surface_ld.sum.pct_of_peak_sustained_elapsed                                        %            0
+    smsp__inst_executed_op_surface_red.sum                                                                  inst            0
+    smsp__inst_executed_op_surface_red.sum.pct_of_peak_sustained_elapsed                                       %            0
+    smsp__inst_executed_op_surface_st.sum                                                                   inst            0
+    smsp__inst_executed_op_surface_st.sum.pct_of_peak_sustained_elapsed                                        %            0
+    smsp__inst_executed_op_texture.sum                                                                      inst            0
+    smsp__inst_executed_op_texture.sum.pct_of_peak_sustained_elapsed                                           %            0
+    smsp__sass_inst_executed_op_global_ld.sum                                                               inst    3,179,058
+    smsp__sass_inst_executed_op_global_st.sum                                                               inst       45,000
+    smsp__sass_inst_executed_op_local_ld.sum                                                                inst            0
+    smsp__sass_inst_executed_op_local_st.sum                                                                inst            0
+    smsp__sass_inst_executed_op_shared_ld.sum                                                               inst            0
+    smsp__sass_inst_executed_op_shared_st.sum                                                               inst            0
+    ------------------------------------------------------------------------------------------------ ----------- ------------
+
+    Section: Memory Workload Analysis Tables
+    ------------------------------------------ ----------- ------------
+    Metric Name                                Metric Unit Metric Value
+    ------------------------------------------ ----------- ------------
+    DRAM Throughput                                      %         0.45
+    L1TEX Hit Rate For Global Loads                      %        99.91
+    L1TEX Hit Rate For Global Stores                     %        68.34
+    L1TEX Hit Rate For Local Loads                       %            0
+    L1TEX Hit Rate For Local Stores                      %            0
+    L1TEX Throughput                                     %        75.75
+    L2 Hit Rate For Loads                                %        89.05
+    L2 Hit Rate For Stores                               %        72.14
+    L2 Throughput                                        %         0.34
+    Maximum Bytes Per Sector For Global Loads  byte/sector           32
+    Average Bytes Per Sector For Global Loads  byte/sector        15.74
+    Maximum Bytes Per Sector For Global Stores byte/sector           32
+    Average Bytes Per Sector For Global Stores byte/sector            8
+    Maximum Bytes Per Sector For Local Loads   byte/sector           32
+    Average Bytes Per Sector For Local Loads   byte/sector            0
+    Maximum Bytes Per Sector For Local Stores  byte/sector           32
+    Average Bytes Per Sector For Local Stores  byte/sector            0
+    ------------------------------------------ ----------- ------------
+
+    Memory Tables
+    Table Name : Shared Memory
+    ------------------------------------------------------------------------------------ ----------- ------------
+    Metric Name                                                                          Metric Unit Metric Value
+    ------------------------------------------------------------------------------------ ----------- ------------
+    l1tex__data_bank_conflicts_pipe_lsu_mem_shared.sum                                                          0
+    l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_atom.sum                                                  0
+    l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum                                                    0
+    l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum                                                    0
+    l1tex__data_pipe_lsu_wavefronts_mem_shared.sum                                                         31,822
+    l1tex__data_pipe_lsu_wavefronts_mem_shared.sum.pct_of_peak_sustained_elapsed                   %         0.10
+    l1tex__data_pipe_lsu_wavefronts_mem_shared_op_atom.sum                                                      0
+    l1tex__data_pipe_lsu_wavefronts_mem_shared_op_atom.sum.pct_of_peak_sustained_elapsed           %            0
+    l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum                                                        0
+    l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum.pct_of_peak_sustained_elapsed             %            0
+    l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum                                                        0
+    l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum.pct_of_peak_sustained_elapsed             %            0
+    smsp__inst_executed_op_ldsm.sum                                                             inst            0
+    smsp__inst_executed_op_shared_atom.sum                                                      inst            0
+    smsp__sass_inst_executed_op_shared_ld.sum                                                   inst            0
+    smsp__sass_inst_executed_op_shared_st.sum                                                   inst            0
+    ------------------------------------------------------------------------------------ ----------- ------------
+
+    Table Name : L1/TEX Cache
+    ----------------------------------------------------------------------------------------- ----------- ------------
+    Metric Name                                                                               Metric Unit Metric Value
+    ----------------------------------------------------------------------------------------- ----------- ------------
+    l1tex__lsu_writeback_active_mem_lg.sum                                                          cycle   12,019,217
+    l1tex__lsu_writeback_active_mem_lg.sum.pct_of_peak_sustained_elapsed                                %        37.45
+    l1tex__m_l1tex2xbar_write_sectors_mem_global_op_atom.sum                                       sector            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_global_op_atom.sum.pct_of_peak_sustained_elapsed              %            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_global_op_red.sum                                        sector            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_global_op_red.sum.pct_of_peak_sustained_elapsed               %            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_lg_op_st.sum                                             sector       74,257
+    l1tex__m_l1tex2xbar_write_sectors_mem_lg_op_st.sum.pct_of_peak_sustained_elapsed                    %         0.23
+    l1tex__m_l1tex2xbar_write_sectors_mem_surface_op_atom.sum                                      sector            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_surface_op_atom.sum.pct_of_peak_sustained_elapsed             %            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_surface_op_red.sum                                       sector            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_surface_op_red.sum.pct_of_peak_sustained_elapsed              %            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_surface_op_st.sum                                        sector            0
+    l1tex__m_l1tex2xbar_write_sectors_mem_surface_op_st.sum.pct_of_peak_sustained_elapsed               %            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_global_op_atom.sum                                        sector            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_global_op_atom.sum.pct_of_peak_sustained_elapsed               %            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_lg_op_ld.sum                                              sector        2,770
+    l1tex__m_xbar2l1tex_read_sectors_mem_lg_op_ld.sum.pct_of_peak_sustained_elapsed                     %         0.01
+    l1tex__m_xbar2l1tex_read_sectors_mem_surface_op_atom.sum                                       sector            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_surface_op_atom.sum.pct_of_peak_sustained_elapsed              %            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_surface_op_ld.sum                                         sector            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_surface_op_ld.sum.pct_of_peak_sustained_elapsed                %            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_texture.sum                                               sector            0
+    l1tex__m_xbar2l1tex_read_sectors_mem_texture.sum.pct_of_peak_sustained_elapsed                      %            0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_atom.sum                                                       0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_atom.sum.pct_of_peak_sustained_elapsed            %            0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_ld.sum                                                 3,179,596
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_ld.sum.pct_of_peak_sustained_elapsed              %         9.91
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_red.sum                                                        0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_red.sum.pct_of_peak_sustained_elapsed             %            0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_st.sum                                                    59,778
+    l1tex__t_output_wavefronts_pipe_lsu_mem_global_op_st.sum.pct_of_peak_sustained_elapsed              %         0.19
+    l1tex__t_output_wavefronts_pipe_lsu_mem_local_op_ld.sum                                                          0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_local_op_ld.sum.pct_of_peak_sustained_elapsed               %            0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_local_op_st.sum                                                          0
+    l1tex__t_output_wavefronts_pipe_lsu_mem_local_op_st.sum.pct_of_peak_sustained_elapsed               %            0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_atom.sum                                                      0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_atom.sum.pct_of_peak_sustained_elapsed           %            0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_ld.sum                                                        0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_ld.sum.pct_of_peak_sustained_elapsed             %            0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_red.sum                                                       0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_red.sum.pct_of_peak_sustained_elapsed            %            0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_st.sum                                                        0
+    l1tex__t_output_wavefronts_pipe_tex_mem_surface_op_st.sum.pct_of_peak_sustained_elapsed             %            0
+    l1tex__t_output_wavefronts_pipe_tex_mem_texture.sum                                                              0
+    l1tex__t_output_wavefronts_pipe_tex_mem_texture.sum.pct_of_peak_sustained_elapsed                   %            0
+    l1tex__t_requests_pipe_lsu_mem_global_op_atom.sum                                                                0
+    l1tex__t_requests_pipe_lsu_mem_global_op_atom.sum.pct_of_peak_sustained_elapsed                     %            0
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                                          3,179,058
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum.pct_of_peak_sustained_elapsed                       %         9.91
+    l1tex__t_requests_pipe_lsu_mem_global_op_red.sum                                                                 0
+    l1tex__t_requests_pipe_lsu_mem_global_op_red.sum.pct_of_peak_sustained_elapsed                      %            0
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum                                                             45,000
+    l1tex__t_requests_pipe_lsu_mem_global_op_st.sum.pct_of_peak_sustained_elapsed                       %         0.14
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum                                                                   0
+    l1tex__t_requests_pipe_lsu_mem_local_op_ld.sum.pct_of_peak_sustained_elapsed                        %            0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum                                                                   0
+    l1tex__t_requests_pipe_lsu_mem_local_op_st.sum.pct_of_peak_sustained_elapsed                        %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_atom.sum                                                               0
+    l1tex__t_requests_pipe_tex_mem_surface_op_atom.sum.pct_of_peak_sustained_elapsed                    %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_ld.sum                                                                 0
+    l1tex__t_requests_pipe_tex_mem_surface_op_ld.sum.pct_of_peak_sustained_elapsed                      %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_red.sum                                                                0
+    l1tex__t_requests_pipe_tex_mem_surface_op_red.sum.pct_of_peak_sustained_elapsed                     %            0
+    l1tex__t_requests_pipe_tex_mem_surface_op_st.sum                                                                 0
+    l1tex__t_requests_pipe_tex_mem_surface_op_st.sum.pct_of_peak_sustained_elapsed                      %            0
+    l1tex__t_requests_pipe_tex_mem_texture.sum                                                                       0
+    l1tex__t_requests_pipe_tex_mem_texture.sum.pct_of_peak_sustained_elapsed                            %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_atom_hit_rate.pct                                            %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_ld_hit_rate.pct                                              %        99.91
+    l1tex__t_sector_pipe_lsu_mem_global_op_red_hit_rate.pct                                             %            0
+    l1tex__t_sector_pipe_lsu_mem_global_op_st_hit_rate.pct                                              %        68.34
+    l1tex__t_sector_pipe_lsu_mem_local_op_ld_hit_rate.pct                                               %            0
+    l1tex__t_sector_pipe_lsu_mem_local_op_st_hit_rate.pct                                               %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_atom_hit_rate.pct                                           %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_ld_hit_rate.pct                                             %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_red_hit_rate.pct                                            %            0
+    l1tex__t_sector_pipe_tex_mem_surface_op_st_hit_rate.pct                                             %            0
+    l1tex__t_sector_pipe_tex_mem_texture_op_tex_hit_rate.pct                                            %            0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_atom.sum                                               sector            0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_atom_lookup_hit.sum                                    sector            0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_atom_lookup_miss.sum                                   sector            0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                                                 sector    3,181,129
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld_lookup_hit.sum                                      sector    3,178,331
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld_lookup_miss.sum                                     sector        2,798
+    l1tex__t_sectors_pipe_lsu_mem_global_op_red.sum                                                sector            0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_red_lookup_hit.sum                                     sector            0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_red_lookup_miss.sum                                    sector            0
+    l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum                                                 sector      180,000
+    l1tex__t_sectors_pipe_lsu_mem_global_op_st_lookup_hit.sum                                      sector      123,010
+    l1tex__t_sectors_pipe_lsu_mem_global_op_st_lookup_miss.sum                                     sector       56,990
+    l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum                                                  sector            0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_ld_lookup_hit.sum                                       sector            0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_ld_lookup_miss.sum                                      sector            0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum                                                  sector            0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_st_lookup_hit.sum                                       sector            0
+    l1tex__t_sectors_pipe_lsu_mem_local_op_st_lookup_miss.sum                                      sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_atom.sum                                              sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_atom_lookup_hit.sum                                   sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_atom_lookup_miss.sum                                  sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_ld.sum                                                sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_ld_lookup_hit.sum                                     sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_ld_lookup_miss.sum                                    sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_red.sum                                               sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_red_lookup_hit.sum                                    sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_red_lookup_miss.sum                                   sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_st.sum                                                sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_st_lookup_hit.sum                                     sector            0
+    l1tex__t_sectors_pipe_tex_mem_surface_op_st_lookup_miss.sum                                    sector            0
+    l1tex__t_sectors_pipe_tex_mem_texture.sum                                                      sector            0
+    l1tex__t_sectors_pipe_tex_mem_texture_lookup_hit.sum                                           sector            0
+    l1tex__t_sectors_pipe_tex_mem_texture_lookup_miss.sum                                          sector            0
+    l1tex__tex_writeback_active.sum                                                                 cycle            0
+    l1tex__tex_writeback_active.sum.pct_of_peak_sustained_elapsed                                       %            0
+    smsp__inst_executed_op_generic_atom_dot_alu.sum                                                  inst            0
+    smsp__inst_executed_op_generic_atom_dot_cas.sum                                                  inst            0
+    smsp__inst_executed_op_global_red.sum                                                            inst            0
+    smsp__inst_executed_op_surface_atom_dot_alu.sum                                                  inst            0
+    smsp__inst_executed_op_surface_atom_dot_cas.sum                                                  inst            0
+    smsp__inst_executed_op_surface_ld.sum                                                            inst            0
+    smsp__inst_executed_op_surface_red.sum                                                           inst            0
+    smsp__inst_executed_op_surface_st.sum                                                            inst            0
+    smsp__inst_executed_op_texture.sum                                                               inst            0
+    smsp__sass_inst_executed_op_global_ld.sum                                                        inst    3,179,058
+    smsp__sass_inst_executed_op_global_st.sum                                                        inst       45,000
+    smsp__sass_inst_executed_op_local_ld.sum                                                         inst            0
+    smsp__sass_inst_executed_op_local_st.sum                                                         inst            0
+    ----------------------------------------------------------------------------------------- ----------- ------------
+
+    Table Name : L2 Cache
+    ---------------------------------------------------------------------------- ------------ ------------
+    Metric Name                                                                   Metric Unit Metric Value
+    ---------------------------------------------------------------------------- ------------ ------------
+    lts__t_requests.sum                                                               request       55,996
+    lts__t_requests_srcunit_gcc.sum                                                   request          950
+    lts__t_requests_srcunit_tex.sum                                                   request       49,420
+    lts__t_requests_srcunit_tex_op_atom_dot_alu.sum                                   request            0
+    lts__t_requests_srcunit_tex_op_atom_dot_cas.sum                                   request            0
+    lts__t_requests_srcunit_tex_op_read.sum                                           request        2,751
+    lts__t_requests_srcunit_tex_op_red.sum                                            request            0
+    lts__t_requests_srcunit_tex_op_write.sum                                          request       46,772
+    lts__t_sectors.avg.pct_of_peak_sustained_elapsed                                        %         0.24
+    lts__t_sectors.avg.peak_sustained                                            sector/cycle            1
+    lts__t_sectors.avg.per_cycle_elapsed                                         sector/cycle         0.00
+    lts__t_sectors.sum                                                                 sector       89,951
+    lts__t_sectors.sum.per_second                                                   sector/us        66.07
+    lts__t_sectors_aperture_device_lookup_miss.sum                                     sector       22,451
+    lts__t_sectors_aperture_peer_lookup_miss.sum                                       sector            0
+    lts__t_sectors_aperture_sysmem_lookup_miss.sum                                     sector          516
+    lts__t_sectors_data_ecc.avg.pct_of_peak_sustained_elapsed                               %         0.01
+    lts__t_sectors_data_ecc.avg.peak_sustained                                   sector/cycle            8
+    lts__t_sectors_data_ecc.avg.per_cycle_elapsed                                sector/cycle         0.00
+    lts__t_sectors_data_ecc.sum                                                        sector       21,467
+    lts__t_sectors_data_ecc.sum.per_second                                          sector/us        15.77
+    lts__t_sectors_lookup_hit.sum                                                      sector       66,994
+    lts__t_sectors_lookup_miss.sum                                                     sector       22,516
+    lts__t_sectors_srcunit_gcc.avg.pct_of_peak_sustained_elapsed                            %         0.01
+    lts__t_sectors_srcunit_gcc.avg.peak_sustained                                sector/cycle            1
+    lts__t_sectors_srcunit_gcc.avg.per_cycle_elapsed                             sector/cycle         0.00
+    lts__t_sectors_srcunit_gcc.sum                                                     sector        3,800
+    lts__t_sectors_srcunit_gcc.sum.per_second                                       sector/us         2.79
+    lts__t_sectors_srcunit_gcc_aperture_device_lookup_miss.sum                         sector          747
+    lts__t_sectors_srcunit_gcc_aperture_peer_lookup_miss.sum                           sector            0
+    lts__t_sectors_srcunit_gcc_aperture_sysmem_lookup_miss.sum                         sector            0
+    lts__t_sectors_srcunit_gcc_lookup_hit.sum                                          sector        3,053
+    lts__t_sectors_srcunit_gcc_lookup_miss.sum                                         sector          747
+    lts__t_sectors_srcunit_tex.avg.pct_of_peak_sustained_elapsed                            %         0.21
+    lts__t_sectors_srcunit_tex.avg.peak_sustained                                sector/cycle            1
+    lts__t_sectors_srcunit_tex.avg.per_cycle_elapsed                             sector/cycle         0.00
+    lts__t_sectors_srcunit_tex.sum                                                     sector       77,278
+    lts__t_sectors_srcunit_tex.sum.pct_of_peak_sustained_elapsed                            %         0.21
+    lts__t_sectors_srcunit_tex.sum.per_second                                       sector/us        56.76
+    lts__t_sectors_srcunit_tex_aperture_device_lookup_miss.sum                         sector       21,423
+    lts__t_sectors_srcunit_tex_aperture_device_op_atom_dot_alu_lookup_miss.sum         sector            0
+    lts__t_sectors_srcunit_tex_aperture_device_op_atom_dot_cas_lookup_miss.sum         sector            0
+    lts__t_sectors_srcunit_tex_aperture_device_op_read_lookup_miss.sum                 sector          164
+    lts__t_sectors_srcunit_tex_aperture_device_op_red_lookup_miss.sum                  sector            0
+    lts__t_sectors_srcunit_tex_aperture_device_op_write_lookup_miss.sum                sector       21,297
+    lts__t_sectors_srcunit_tex_aperture_peer_lookup_miss.sum                           sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_atom_dot_alu_lookup_miss.sum           sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_atom_dot_cas_lookup_miss.sum           sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_read_lookup_miss.sum                   sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_red_lookup_miss.sum                    sector            0
+    lts__t_sectors_srcunit_tex_aperture_peer_op_write_lookup_miss.sum                  sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_lookup_miss.sum                         sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_atom_dot_alu_lookup_miss.sum         sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_atom_dot_cas_lookup_miss.sum         sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_read_lookup_miss.sum                 sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_red_lookup_miss.sum                  sector            0
+    lts__t_sectors_srcunit_tex_aperture_sysmem_op_write_lookup_miss.sum                sector            0
+    lts__t_sectors_srcunit_tex_lookup_hit.sum                                          sector       55,755
+    lts__t_sectors_srcunit_tex_lookup_miss.sum                                         sector       21,601
+    lts__t_sectors_srcunit_tex_op_atom_dot_alu.avg.pct_of_peak_sustained_elapsed            %            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_alu.avg.peak_sustained                sector/cycle            1
+    lts__t_sectors_srcunit_tex_op_atom_dot_alu.avg.per_cycle_elapsed             sector/cycle            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_alu.sum                                     sector            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_alu.sum.per_second                        sector/s            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_alu_lookup_hit.sum                          sector            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_alu_lookup_miss.sum                         sector            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_cas.avg.pct_of_peak_sustained_elapsed            %            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_cas.avg.peak_sustained                sector/cycle            1
+    lts__t_sectors_srcunit_tex_op_atom_dot_cas.avg.per_cycle_elapsed             sector/cycle            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_cas.sum                                     sector            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_cas.sum.per_second                        sector/s            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_cas_lookup_hit.sum                          sector            0
+    lts__t_sectors_srcunit_tex_op_atom_dot_cas_lookup_miss.sum                         sector            0
+    lts__t_sectors_srcunit_tex_op_read.avg.pct_of_peak_sustained_elapsed                    %         0.01
+    lts__t_sectors_srcunit_tex_op_read.avg.peak_sustained                        sector/cycle            1
+    lts__t_sectors_srcunit_tex_op_read.avg.per_cycle_elapsed                     sector/cycle         0.00
+    lts__t_sectors_srcunit_tex_op_read.sum                                             sector        2,754
+    lts__t_sectors_srcunit_tex_op_read.sum.per_second                               sector/us         2.02
+    lts__t_sectors_srcunit_tex_op_read_lookup_hit.sum                                  sector        2,680
+    lts__t_sectors_srcunit_tex_op_read_lookup_miss.sum                                 sector          164
+    lts__t_sectors_srcunit_tex_op_red.avg.pct_of_peak_sustained_elapsed                     %            0
+    lts__t_sectors_srcunit_tex_op_red.avg.peak_sustained                         sector/cycle            1
+    lts__t_sectors_srcunit_tex_op_red.avg.per_cycle_elapsed                      sector/cycle            0
+    lts__t_sectors_srcunit_tex_op_red.sum                                              sector            0
+    lts__t_sectors_srcunit_tex_op_red.sum.per_second                                 sector/s            0
+    lts__t_sectors_srcunit_tex_op_red_lookup_hit.sum                                   sector            0
+    lts__t_sectors_srcunit_tex_op_red_lookup_miss.sum                                  sector            0
+    lts__t_sectors_srcunit_tex_op_write.avg.pct_of_peak_sustained_elapsed                   %         0.20
+    lts__t_sectors_srcunit_tex_op_write.avg.peak_sustained                       sector/cycle            1
+    lts__t_sectors_srcunit_tex_op_write.avg.per_cycle_elapsed                    sector/cycle         0.00
+    lts__t_sectors_srcunit_tex_op_write.sum                                            sector       75,001
+    lts__t_sectors_srcunit_tex_op_write.sum.per_second                              sector/us        55.09
+    lts__t_sectors_srcunit_tex_op_write_lookup_hit.sum                                 sector       53,057
+    lts__t_sectors_srcunit_tex_op_write_lookup_miss.sum                                sector       21,483
+    ---------------------------------------------------------------------------- ------------ ------------
+
+    Table Name : Device Memory
+    --------------------------------------------------- ----------- ------------
+    Metric Name                                         Metric Unit Metric Value
+    --------------------------------------------------- ----------- ------------
+    dram__bytes_read.sum                                      Mbyte         1.86
+    dram__bytes_read.sum.pct_of_peak_sustained_elapsed            %         0.42
+    dram__bytes_read.sum.per_second                         Gbyte/s         1.36
+    dram__bytes_write.sum                                     Kbyte       132.16
+    dram__bytes_write.sum.pct_of_peak_sustained_elapsed           %         0.03
+    dram__bytes_write.sum.per_second                        Mbyte/s        97.07
+    dram__sectors_read.sum                                   sector       58,029
+    dram__sectors_write.sum                                  sector        4,130
+    --------------------------------------------------- ----------- ------------
+
+    OPT   Est. Speedup: 38.48%                                                                                          
+          The memory access pattern for global loads from L1TEX might not be optimal. On average, only 15.7 of the 32   
+          bytes transmitted per sector are utilized by each thread. This could possibly be caused by a stride between   
+          threads. Check the Source Counters section for uncoalesced global loads.                                      
+    ----- --------------------------------------------------------------------------------------------------------------
+    OPT   Est. Speedup: 56.82%                                                                                          
+          The memory access pattern for global stores to L1TEX might not be optimal. On average, only 8.0 of the 32     
+          bytes transmitted per sector are utilized by each thread. This could possibly be caused by a stride between   
+          threads. Check the Source Counters section for uncoalesced global stores.                                     
+
+    Section: Scheduler Statistics
+    -------------------------------------- ----------- ------------
+    Metric Name                            Metric Unit Metric Value
+    -------------------------------------- ----------- ------------
+    One or More Eligible                             %        71.81
+    Issued Warp Per Scheduler                                  0.72
+    No Eligible                                      %        28.19
+    Theoretical Active Warps Per Scheduler        warp            8
+    Active Warps Per Scheduler                    warp         6.77
+    Eligible Warps Per Scheduler                  warp         2.08
+    -------------------------------------- ----------- ------------
+
+    Table Name : Warps Per Scheduler
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Issued Warp Per Scheduler                           0.72
+    Theoretical Warps Per Scheduler        warp            8
+    GPU Maximum Warps Per Scheduler        warp            8
+    Active Warps Per Scheduler             warp         6.77
+    Eligible Warps Per Scheduler           warp         2.08
+    ------------------------------- ----------- ------------
+
+    Section: Warp State Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Warp Cycles Per Issued Instruction             cycle         9.43
+    Warp Cycles Per Executed Instruction           cycle         9.43
+    Issued Warp Per Scheduler                                    0.72
+    Avg. Active Threads Per Warp                                29.94
+    Avg. Not Predicated Off Threads Per Warp                    29.24
+    ---------------------------------------- ----------- ------------
+
+    Table Name : Warp State (All Cycles)
+    ------------------------ ----------- ------------
+    Metric Name              Metric Unit Metric Value
+    ------------------------ ----------- ------------
+    Stall Wait                      inst         2.22
+    Stall Not Selected              inst         1.90
+    Stall Long Scoreboard           inst         1.56
+    Stall Math Pipe Throttle        inst         1.34
+    Selected                        inst         1.00
+    Stall No Instruction            inst         0.73
+    Stall Branch Resolving          inst         0.56
+    Stall Dispatch Stall            inst         0.08
+    Stall Short Scoreboard          inst         0.02
+    Stall Drain                     inst         0.01
+    Stall IMC Miss                  inst         0.01
+    Stall LG Throttle               inst         0.01
+    Stall MIO Throttle              inst         0.01
+    Stall Barrier                   inst            0
+    Stall Membar                    inst            0
+    Stall Misc                      inst         0.00
+    Stall Sleeping                  inst            0
+    Stall Tex Throttle              inst            0
+    ------------------------ ----------- ------------
+
+    Section: Instruction Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Instructions Executed                           inst   90,529,044
+    Avg. Executed Instructions Per Scheduler        inst   565,812.71
+    Executed Instructions                           inst   90,530,034
+    Avg. Issued Instructions Per Scheduler          inst   565,844.57
+    Issued Instructions                             inst   90,535,132
+    ---------------------------------------- ----------- ------------
+
+    Opcode Category Chart
+    Table Name : Executed Instruction Categories
+    --------------------------------------------- ----------- ------------------------------
+    Metric Name                                   Metric Unit                   Metric Value
+    --------------------------------------------- ----------- ------------------------------
+    Executed Instructions by SASS Opcode Category                    90,529,044 (54,526,581;
+                                                                      16,373,506; 8,731,988;
+                                                                       7,474,387; 3,225,480;
+                                                                    121,302; 60,800; 15,000)
+    --------------------------------------------- ----------- ------------------------------
+
+    Opcode Charts
+    Table Name : Executed Instruction Mix
+    ----------------------------------------------------- ----------- ------------------------------
+    Metric Name                                           Metric Unit                   Metric Value
+    ----------------------------------------------------- ----------- ------------------------------
+    Executed Warp-Level Instructions By Basic SASS Opcode                    90,529,044 (19,713,368;
+                                                                              12,860,644; 9,855,122;
+                                                                               9,427,393; 6,321,137;
+                                                                               6,257,672; 4,411,316;
+                                                                               3,364,540; 3,360,547;
+                                                                               3,360,547; 3,180,480;
+                                                                               2,314,651; 2,205,394;
+                                                                               2,015,573; 1,153,250;
+                                                                            206,872; 95,380; 69,705;
+                                                                             61,302; 60,800; 60,000;
+                                                                             53,151; 45,000; 30,200;
+                                                                             15,000; 15,000; 15,000)
+    ----------------------------------------------------- ----------- ------------------------------
+
+    OPT   Est. Speedup: 18.54%                                                                                          
+          This kernel executes 19713368 fused and 22715766 non-fused FP32 instructions. By converting pairs of          
+          non-fused instructions to their fused                                                                         
+          (https://docs.nvidia.com/cuda/floating-point/#cuda-and-floating-point), higher-throughput equivalent, the     
+          achieved FP32 performance could be increased by up to 27% (relative to its current performance).              
+
+    Section: NVLink Topology
+    NVLink Topology
+    The system does not have any NVLink connections.
+
+    Section: NUMA Affinity
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    CPU Affinity                                1 (0-1)
+    Device Names                           1 (Tesla T4)
+    NUMA ID by CPU Affinity                       1 (0)
+    NUMA ID by Memory Affinity                    1 (0)
+    -------------------------- ----------- ------------
+
+    Table Name : NUMA Affinity
+    ------ -------- ----------------------- ------------ --------------------------
+    GPU ID GPU Name NUMA ID by CPU Affinity CPU Affinity NUMA ID by Memory Affinity
+    ------ -------- ----------------------- ------------ --------------------------
+         0 Tesla T4                       0          0-1                          0
+    ------ -------- ----------------------- ------------ --------------------------
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                  1,900
+    Registers Per Thread             register/thread              51
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block        byte/block               0
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block               0
+    # SMs                                         SM              40
+    Stack Size                                                 1,024
+    Threads                                   thread         486,400
+    # TPCs                                                        20
+    Enabled TPC IDs                                              all
+    Uses Green Context                                             0
+    Waves Per SM                                               11.88
+    Theoretical Occupancy                          %             100
+    Achieved Occupancy                             %           84.50
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block            4
+    Block Limit Shared Mem                block           16
+    Block Limit Warps                     block            4
+    Theoretical Active Warps per SM        warp           32
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        84.50
+    Achieved Active Warps Per SM           warp        27.04
+    Theoretical Warps Per Scheduler        warp            8
+    GPU Maximum Warps Per Scheduler        warp            8
+    ------------------------------- ----------- ------------
+
+    % Occupancy Graphs
+    Table Name : Impact of Varying Register Count Per Thread
+    ------------------------------ --------------- ------------------------------
+    Metric Name                        Metric Unit                   Metric Value
+    ------------------------------ --------------- ------------------------------
+    % Occupancy Per Register Count      %/register    13,300 (100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                         100; 100; 100; 100; 100;
+                                                     100; 75; 75; 75; 75; 75; 75;
+                                                      75; 75; 75; 75; 75; 75; 75;
+                                                      75; 75; 75; 50; 50; 50; 50;
+                                                      50; 50; 50; 50; 50; 50; 50;
+                                                      50; 50; 50; 50; 50; 50; 50;
+                                                      50; 50; 50; 50; 50; 50; 50;
+                                                      50; 50; 50; 50; 50; 50; 50;
+                                                      50; 50; 50; 50; 50; 50; 50;
+                                                      50; 50; 50; 50; 50; 50; 50;
+                                                      50; 50; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                      25; 25; 25; 25; 25; 25; 25;
+                                                                  25; 25; 25; 25)
+    Registers Per Thread           register/thread                             51
+    ------------------------------ --------------- ------------------------------
+
+    Table Name : Impact of Varying Block Size
+    -------------------------- ----------- ------------------------------
+    Metric Name                Metric Unit                   Metric Value
+    -------------------------- ----------- ------------------------------
+    % Occupancy Per Block Size           %   5,280 (50; 50; 50; 100; 100;
+                                                93; 93; 100; 100; 93; 93;
+                                                93; 93; 87; 87; 100; 100;
+                                              84; 84; 93; 93; 68; 68; 75;
+                                              75; 81; 81; 87; 87; 93; 93;
+                                                100; 100; 53; 53; 56; 56;
+                                              59; 59; 62; 62; 65; 65; 68;
+                                              68; 71; 71; 75; 75; 78; 78;
+                                              81; 81; 84; 84; 87; 87; 90;
+                                            90; 93; 93; 96; 96; 100; 100)
+    Block Size                                                        256
+    -------------------------- ----------- ------------------------------
+
+    Table Name : Impact of Varying Shared Memory Usage Per Block
+    ------------------------------- ----------- ------------------------------
+    Metric Name                     Metric Unit                   Metric Value
+    ------------------------------- ----------- ------------------------------
+    % Occupancy Per Shared Mem Size     %/Kbyte  4.22 (0.10; 0.10; 0.10; 0.10;
+                                                       0.10; 0.10; 0.10; 0.10;
+                                                       0.10; 0.10; 0.10; 0.10;
+                                                       0.10; 0.10; 0.10; 0.10;
+                                                       0.10; 0.07; 0.07; 0.07;
+                                                       0.07; 0.07; 0.05; 0.05;
+                                                       0.05; 0.05; 0.05; 0.05;
+                                                       0.05; 0.05; 0.05; 0.05;
+                                                       0.05; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                       0.03; 0.03; 0.03; 0.03;
+                                                    0.03; 0; 0; 0; 0; 0; 0; 0;
+                                                    0; 0; 0; 0; 0; 0; 0; 0; 0;
+                                                    0; 0; 0; 0; 0; 0; 0; 0; 0;
+                                                             0; 0; 0; 0; 0; 0)
+    Shared Memory Per Block          byte/block                              0
+    ------------------------------- ----------- ------------------------------
+
+    # Warps Graphs
+    Table Name : Impact of Varying Register Count Per Thread
+    -------------------------- --------------- ------------------------------
+    Metric Name                    Metric Unit                   Metric Value
+    -------------------------- --------------- ------------------------------
+    # Warps Per Register Count                     4,256 (32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 32; 32; 32;
+                                                  32; 32; 32; 32; 24; 24; 24;
+                                                  24; 24; 24; 24; 24; 24; 24;
+                                                  24; 24; 24; 24; 24; 24; 16;
+                                                  16; 16; 16; 16; 16; 16; 16;
+                                                  16; 16; 16; 16; 16; 16; 16;
+                                                  16; 16; 16; 16; 16; 16; 16;
+                                                  16; 16; 16; 16; 16; 16; 16;
+                                                  16; 16; 16; 16; 16; 16; 16;
+                                                  16; 16; 16; 16; 16; 16; 16;
+                                                 16; 16; 16; 16; 16; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                   8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                      8; 8; 8; 8; 8; 8; 8; 8)
+    Registers Per Thread       register/thread                             51
+    -------------------------- --------------- ------------------------------
+
+    Table Name : Impact of Varying Block Size
+    ---------------------- ----------- ------------------------------
+    Metric Name            Metric Unit                   Metric Value
+    ---------------------- ----------- ------------------------------
+    Block Size                                                    256
+    # Warps Per Block Size                 1,698 (16; 16; 16; 32; 32;
+                                          30; 30; 32; 32; 30; 30; 30;
+                                          30; 28; 28; 32; 32; 27; 27;
+                                          30; 30; 22; 22; 24; 24; 26;
+                                          26; 28; 28; 30; 30; 32; 32;
+                                          17; 17; 18; 18; 19; 19; 20;
+                                          20; 21; 21; 22; 22; 23; 23;
+                                          24; 24; 25; 25; 26; 26; 27;
+                                          27; 28; 28; 29; 29; 30; 30;
+                                                      31; 31; 32; 32)
+    ---------------------- ----------- ------------------------------
+
+    Table Name : Impact of Varying Shared Memory Usage Per Block
+    --------------------------- ----------- ------------------------------
+    Metric Name                 Metric Unit                   Metric Value
+    --------------------------- ----------- ------------------------------
+    # Warps Per Shared Mem Size                 1,352 (32; 32; 32; 32; 32;
+                                               32; 32; 32; 32; 32; 32; 32;
+                                               32; 32; 32; 32; 32; 24; 24;
+                                               24; 24; 24; 16; 16; 16; 16;
+                                               16; 16; 16; 16; 16; 16; 16;
+                                                8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                8; 8; 8; 8; 8; 8; 8; 8; 8;
+                                                8; 0; 0; 0; 0; 0; 0; 0; 0;
+                                                0; 0; 0; 0; 0; 0; 0; 0; 0;
+                                                0; 0; 0; 0; 0; 0; 0; 0; 0;
+                                                            0; 0; 0; 0; 0)
+    Shared Memory Per Block      byte/block                              0
+    --------------------------- ----------- ------------------------------
+
+    OPT   Est. Local Speedup: 15.5%                                                                                     
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (84.5%) can be the     
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can   
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices   
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on     
+          optimizing occupancy.                                                                                         
+
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    Average DRAM Active Cycles       cycle    31,079.50
+    Total DRAM Elapsed Cycles        cycle   54,704,128
+    Average L1 Active Cycles         cycle   789,646.85
+    Total L1 Elapsed Cycles          cycle   32,091,040
+    Average L2 Active Cycles         cycle   100,439.31
+    Total L2 Elapsed Cycles          cycle   37,245,568
+    Average SM Active Cycles         cycle   789,646.85
+    Total SM Elapsed Cycles          cycle   32,091,040
+    Average SMSP Active Cycles       cycle   788,015.81
+    Total SMSP Elapsed Cycles        cycle  128,364,160
+    -------------------------- ----------- ------------
+
+    Table Name : Workload Distribution
+    ------------------ ----------- ------------
+    Metric Name        Metric Unit Metric Value
+    ------------------ ----------- ------------
+    DRAM Active Cycles       cycle    31,079.50
+    DRAM Active Cycles       cycle       31,672
+    DRAM Active Cycles       cycle       30,248
+    DRAM Active Cycles       cycle      248,636
+    L1 Active Cycles         cycle   789,646.85
+    L1 Active Cycles         cycle      798,284
+    L1 Active Cycles         cycle      779,158
+    L1 Active Cycles         cycle   31,585,874
+    L2 Active Cycles         cycle   100,439.31
+    L2 Active Cycles         cycle      111,599
+    L2 Active Cycles         cycle       93,984
+    L2 Active Cycles         cycle    3,214,058
+    SM Active Cycles         cycle   789,646.85
+    SM Active Cycles         cycle      798,284
+    SM Active Cycles         cycle      779,158
+    SM Active Cycles         cycle   31,585,874
+    SMSP Active Cycles       cycle   788,015.81
+    SMSP Active Cycles       cycle      797,551
+    SMSP Active Cycles       cycle      774,506
+    SMSP Active Cycles       cycle  126,082,529
+    ------------------ ----------- ------------
+
+    Section: Source Counters
+    --------------------------------------------------------------------------------------------------------- ----------- -------------
+    Metric Name                                                                                               Metric Unit  Metric Value
+    --------------------------------------------------------------------------------------------------------- ----------- -------------
+    Avg. Threads Executed                                                                                          thread        19,642
+    Avg. Predicated-On Threads Executed                                                                            thread        19,154
+    Avg. Predicated-On Threads Unexecuted                                                                          thread        24,334
+    Derivative Avg. Predicated-On Threads Executed                                                                 thread         2,544
+    L1 Conflicts Shared N-Way                                                                                                         0
+    L1 Wavefronts Shared Excessive                                                                                                    0
+    L2 Theoretical Sectors Global Excessive                                                                         Kbyte        135.65
+    Branch Instructions Ratio                                                                                           %          0.11
+    Elapsed Cycles                                                                                                  cycle       796,455
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_barrier)                                     warp             0
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_branch_resolving)                        branches         1,791
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_dispatch_stall)                              warp           269
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_drain)                                       warp            30
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_imc_miss)                                    warp            53
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_lg_throttle)                                 warp            24
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_long_scoreboard)                             warp         5,154
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_math_pipe_throttle)                          warp         4,200
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_membar)                                      byte             0
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_mio_throttle)                                warp            12
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_misc)                                        warp             0
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_no_instructions)                             inst         2,524
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_not_selected)                                warp         5,904
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_selected)                                    warp         3,396
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_short_scoreboard)                            warp            49
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_sleeping)                                    warp             0
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_tex_throttle)                                warp             0
+    Warp Stall Sampling (All Samples) (smsp__pcsamp_warps_issue_stalled_wait)                                        warp         7,436
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_barrier_not_issued)                   warp             0
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_branch_resolving_not_issued)      branches           647
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_dispatch_stall_not_issued)            warp            50
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_drain_not_issued)                     warp            13
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_imc_miss_not_issued)                  warp            49
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_lg_throttle_not_issued)               warp            14
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_long_scoreboard_not_issued)           warp         1,634
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_math_pipe_throttle_not_issued)        warp         2,009
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_membar_not_issued)                    byte             0
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_mio_throttle_not_issued)              warp             3
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_misc_not_issued)                      warp             0
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_no_instructions_not_issued)           inst           805
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_not_selected_not_issued)              warp             0
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_selected_not_issued)                  warp             0
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_short_scoreboard_not_issued)          warp            17
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_sleeping_not_issued)                  warp             0
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_tex_throttle_not_issued)              warp             0
+    Warp Stall Sampling (Not-issued Samples) (smsp__pcsamp_warps_issue_stalled_wait_not_issued)                      warp         2,435
+    Instructions Executed                                                                                            inst    90,529,044
+    L1 Active Cycles                                                                                                cycle    31,585,874
+    L1 Elapsed Cycles                                                                                               cycle    32,091,040
+    L2 Active Cycles                                                                                                cycle     3,214,058
+    L2 Elapsed Cycles                                                                                               cycle    37,245,568
+    Access Size                                                                                                                       0
+    Access Operation                                                                                                                  0
+    L1 Tag Requests Global                                                                                        sectors     3,293,649
+    L1 Wavefronts Shared                                                                                          sectors             0
+    L1 Wavefronts Shared Ideal                                                                                    sectors             0
+    L2 Theoretical Sectors Global                                                                                 sectors     3,361,133
+    L2 Theoretical Sectors Global Ideal                                                                           sectors     3,225,487
+    L2 Theoretical Sectors Local                                                                                  sectors             0
+    Address Space                                                                                                                     0
+    Divergent Branches                                                                                           branches         4,108
+    Executed Instructions                                                                                            inst    90,530,034
+    Branch Instructions                                                                                              inst     9,652,511
+    # Samples                                                                                                                    30,842
+    stall_barrier                                                                                                    warp             0
+    stall_barrier (Not Issued)                                                                                       warp             0
+    stall_branch_resolving                                                                                       branches         1,791
+    stall_branch_resolving (Not Issued)                                                                          branches           647
+    stall_dispatch                                                                                                   warp           269
+    stall_dispatch (Not Issued)                                                                                      warp            50
+    stall_drain                                                                                                      warp            30
+    stall_drain (Not Issued)                                                                                         warp            13
+    stall_imc                                                                                                        warp            53
+    stall_imc (Not Issued)                                                                                           warp            49
+    stall_lg                                                                                                         warp            24
+    stall_lg (Not Issued)                                                                                            warp            14
+    stall_long_sb                                                                                                    warp         5,154
+    stall_long_sb (Not Issued)                                                                                       warp         1,634
+    stall_math                                                                                                       warp         4,200
+    stall_math (Not Issued)                                                                                          warp         2,009
+    stall_membar                                                                                                     byte             0
+    stall_membar (Not Issued)                                                                                        byte             0
+    stall_mio                                                                                                        warp            12
+    stall_mio (Not Issued)                                                                                           warp             3
+    stall_misc                                                                                                       warp             0
+    stall_misc (Not Issued)                                                                                          warp             0
+    stall_no_inst                                                                                                    inst         2,524
+    stall_no_inst (Not Issued)                                                                                       inst           805
+    stall_not_selected                                                                                               warp         5,904
+    stall_not_selected (Not Issued)                                                                                  warp             0
+    stall_selected                                                                                                   warp         3,396
+    stall_selected (Not Issued)                                                                                      warp             0
+    stall_short_sb                                                                                                   warp            49
+    stall_short_sb (Not Issued)                                                                                      warp            17
+    stall_sleep                                                                                                      warp             0
+    stall_sleeping (Not Issued)                                                                                      warp             0
+    stall_tex                                                                                                        warp             0
+    stall_tex (Not Issued)                                                                                           warp             0
+    stall_wait                                                                                                       warp         7,436
+    stall_wait (Not Issued)                                                                                          warp         2,435
+    Branch Efficiency                                                                                                   %         99.93
+    Avg. Divergent Branches                                                                                      branches         25.68
+    Thread Instructions Executed                                                                                     inst 2,710,450,749
+    Predicated-On Thread Instructions Executed                                                                       inst 2,669,445,728
+    --------------------------------------------------------------------------------------------------------- ----------- -------------
+
+    Hotspot Locations
+    Table Name : Warp Stall Sampling (All Samples)
+    --------------------------------------------------- ----------- ------------
+    Metric Name                                         Metric Unit Metric Value
+    --------------------------------------------------- ----------- ------------
+    smsp__pcsamp_warps_issue_stalled_barrier                   warp            0
+    smsp__pcsamp_warps_issue_stalled_branch_resolving      branches        1,791
+    smsp__pcsamp_warps_issue_stalled_dispatch_stall            warp          269
+    smsp__pcsamp_warps_issue_stalled_drain                     warp           30
+    smsp__pcsamp_warps_issue_stalled_imc_miss                  warp           53
+    smsp__pcsamp_warps_issue_stalled_lg_throttle               warp           24
+    smsp__pcsamp_warps_issue_stalled_long_scoreboard           warp        5,154
+    smsp__pcsamp_warps_issue_stalled_math_pipe_throttle        warp        4,200
+    smsp__pcsamp_warps_issue_stalled_membar                    byte            0
+    smsp__pcsamp_warps_issue_stalled_mio_throttle              warp           12
+    smsp__pcsamp_warps_issue_stalled_misc                      warp            0
+    smsp__pcsamp_warps_issue_stalled_no_instructions           inst        2,524
+    smsp__pcsamp_warps_issue_stalled_not_selected              warp        5,904
+    smsp__pcsamp_warps_issue_stalled_selected                  warp        3,396
+    smsp__pcsamp_warps_issue_stalled_short_scoreboard          warp           49
+    smsp__pcsamp_warps_issue_stalled_sleeping                  warp            0
+    smsp__pcsamp_warps_issue_stalled_tex_throttle              warp            0
+    smsp__pcsamp_warps_issue_stalled_wait                      warp        7,436
+    --------------------------------------------------- ----------- ------------
+
+    Table Name : Most Instructions Executed
+    --------------------- ----------- ------------
+    Metric Name           Metric Unit Metric Value
+    --------------------- ----------- ------------
+    Instructions Executed        inst   90,529,044
+    --------------------- ----------- ------------
+
+    OPT   Est. Speedup: 0.3483%                                                                                         
+          This kernel has uncoalesced global accesses resulting in a total of 135646 excessive sectors (4% of the total 
+          3361133 sectors). Check the L2 Theoretical Sectors Global Excessive table for the primary source locations.   
+          The CUDA Programming Guide                                                                                    
+          (https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#device-memory-accesses) has additional      
+          information on reducing uncoalesced device memory accesses.                                                   
+

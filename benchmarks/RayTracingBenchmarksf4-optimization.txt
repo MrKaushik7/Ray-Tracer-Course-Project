@@ -1,0 +1,8 @@
+Average kernel time(ms): 0.0879312, 800x600 resolution, number of spheres: 4
+Average kernel time(ms): 0.068832, 800x600 resolution, number of spheres: 4
+Average kernel time(ms): 0.180976, 800x600 resolution, number of spheres: 10
+Average kernel time(ms): 0.745803, 800x600 resolution, number of spheres: 100
+Average kernel time(ms): 4.89817, 800x600 resolution, number of spheres: 500
+Average kernel time(ms): 10.0812, 800x600 resolution, number of spheres: 1000
+Average kernel time(ms): 63.7968, 800x600 resolution, number of spheres: 5000
+Average kernel time(ms): 63.7854, 800x600 resolution, number of spheres: 5000
