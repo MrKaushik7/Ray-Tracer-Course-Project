@@ -233,7 +233,7 @@ __device__ Vec3 accumulatedColour(const Sphere* scene, Vec3 light, Vec3 camera, 
 
 __device__ Vec3 rayColour(const Sphere* scene, Vec3 camera, Vec3 dirn, int num_spheres) {
     // x = right, y = up, z = toward the camera.
-    Vec3 light(4, 6, -20);
+    Vec3 light(4, 6, 2);
     float tClosest;
     int firstCollision = rayCollisionPoint(scene, camera, dirn, tClosest, num_spheres);
 
@@ -302,7 +302,7 @@ int main() {
     unsigned char* d_image;
     cudaErrCheck(cudaMalloc((void**)&d_image, H * W * 3 * sizeof(unsigned char)));
 
-    Vec3 camera(0.0f, 1.2f, 4.0f);
+    Vec3 camera(0.0f, 1.0f, 3.0f);
     float aspect_ratio = (float)W/H;
 
     dim3 threads(8, 8);

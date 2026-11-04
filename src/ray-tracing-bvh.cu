@@ -7,7 +7,6 @@
 #include <fstream>
 
 #define MISS -1
-#define threads_per_block 16
 #define bounces 5
 #define eps 0.001f
 #define min_throughput 0.001f
@@ -257,7 +256,7 @@ __device__ bool intersectAxis(float axisCamera, float axisDirn, float minCoord, 
     return tClosest <= tFarthest;
 }
 
-__device__ bool intersectAABB(const AABB& box, Vec3 camera, Vec3 dirn, float tClosest, float tFarthest) {
+__device__ bool intersectAABB(const AABB& box, Vec3 camera, Vec3 dirn, float& tClosest, float& tFarthest) {
     if(!intersectAxis(camera.x, dirn.x, box.minPoint.x, box.maxPoint.x, tClosest, tFarthest)) return false;
     if(!intersectAxis(camera.y, dirn.y, box.minPoint.y, box.maxPoint.y, tClosest, tFarthest)) return false;
     if(!intersectAxis(camera.z, dirn.z, box.minPoint.z, box.maxPoint.z, tClosest, tFarthest)) return false;
@@ -581,11 +580,13 @@ int main() {
     Vec3 camera(0, 1, 3);
     float aspect_ratio = (float)W/H;
 
-    int blocks_x = (W + threads_per_block - 1) / threads_per_block;
-    int blocks_y = (H + threads_per_block - 1) / threads_per_block;
+    dim3 threads(16, 16);
+
+    int blocks_x = (W + threads.x - 1) / threads.x;
+    int blocks_y = (H + threads.y - 1) / threads.y;
 
     dim3 blocks(blocks_x, blocks_y, 1);
-    dim3 threads(threads_per_block, threads_per_block);
+    
 
     //warm up gpu, pay initialization costs
     for(int i = 0; i < 5; i++) {
