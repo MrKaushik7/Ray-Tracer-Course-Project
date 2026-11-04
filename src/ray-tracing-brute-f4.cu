@@ -6,9 +6,9 @@
 #include <fstream>
 
 #define MISS -1
-#define bounces 5
+#define bounces 10
 #define eps 0.001f
-#define min_throughput 0.001f
+#define min_throughput 0.01f
 
 void cudaErrCheck(cudaError_t err) {
     if(err != cudaSuccess) {
@@ -314,7 +314,7 @@ int main() {
     Vec3 camera(0.0f, 1.0f, 3.0f);
     float aspect_ratio = (float)W/H;
 
-    dim3 threads(16, 16);
+    dim3 threads(8, 8);
 
     int blocks_x = (W + threads.x - 1) / threads.x;
     int blocks_y = (H + threads.y - 1) / threads.y;
@@ -328,7 +328,7 @@ int main() {
 
     kernelTimer(
         [&](){ray_trace<<<blocks, threads>>>(scene, d_image, camera, aspect_ratio, H, W, num_spheres, d_sphereAttr);},
-        "RayTracingBenchmarks",
+        "RayTracingBenchmarksf4",
         W,
         H,
         num_spheres,
@@ -347,6 +347,6 @@ int main() {
     free(image);
     cudaFree(d_image);
     cudaFree(scene);
-    cudaFree(d_sphereAttr)
+    cudaFree(d_sphereAttr);
 
 }
