@@ -1,0 +1,5 @@
+Average kernel time(ms): 14.4996, 800x600 resolution, number of spheres: 5000, leaf_size: 1
+Average kernel time(ms): 16.2386, 800x600 resolution, number of spheres: 5000, leaf_size: 2
+Average kernel time(ms): 16.65165, 800x600 resolution, number of spheres: 5000, leaf_size: 4
+Average kernel time(ms): 17.64075, 800x600 resolution, number of spheres: 5000, leaf_size: 8
+Average kernel time(ms): 17.7388, 800x600 resolution, number of spheres: 5000, leaf_size: 16

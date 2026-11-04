@@ -114,7 +114,7 @@ __device__ float intersectSphere(Vec3 camera, Vec3 dirn, const float4& sph) {
     //assume at^2 + bt + c
     float a = dot(dirn, dirn); //mx2 + my2 + mz2
     float b = 2 * dot(shifted_center, dirn); //2(kxmx + kymy + kzmz)
-    float c = dot(shifted_center, shifted_center) - sph.w * sph.w; //kx2 + ky2 + kz2
+    float c = dot(shifted_center, shifted_center) - sph.w; //kx2 + ky2 + kz2
 
     float discriminant = b * b - 4 * a * c;
 
@@ -292,7 +292,7 @@ int main() {
         sphereAttributes[i].x = center_x;
         sphereAttributes[i].y = center_y;
         sphereAttributes[i].z = center_z;
-        sphereAttributes[i].w = radius;
+        sphereAttributes[i].w = radius * radius;
 
     }
 

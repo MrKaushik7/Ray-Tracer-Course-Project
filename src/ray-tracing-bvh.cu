@@ -13,8 +13,6 @@
 #define leafSize 4
 #define STACK_SIZE 16
 
-__constant__ int c_floorIndex;
-
 void cudaErrCheck(cudaError_t err) {
     if(err != cudaSuccess) {
         throw std::runtime_error(cudaGetErrorString(err));
@@ -197,7 +195,7 @@ __host__ int buildTree(const Sphere* scene, std::vector<BVHNode>& tree, std::vec
         minX = fmin(minX, c.x);
         maxX = fmax(maxX, c.x);
         minY = fmin(minY, c.y);
-        maxX = fmax(maxY, c.y);
+        maxY = fmax(maxY, c.y);
         minZ = fmin(minZ, c.z);
         maxZ = fmax(maxZ, c.z);
     }
@@ -239,13 +237,13 @@ __host__ int buildTree(const Sphere* scene, std::vector<BVHNode>& tree, std::vec
     return idx;
 }
 
-__device__ bool intersectAxis(float axisCamera, float axisDirn, float invDirn, float minCoord, float maxCoord, float& tClosest, float& tFarthest) {
+__device__ bool intersectAxis(float axisCamera, float axisDirn, float minCoord, float maxCoord, float& tClosest, float& tFarthest) {
     if(axisDirn == 0.0f) { //parallel to bounding box
         return (minCoord <= axisCamera) && (axisCamera <= maxCoord); //inside box?
     }
 
-    float t1 = (minCoord - axisCamera) * invDirn;
-    float t2 = (maxCoord - axisCamera) * invDirn;
+    float t1 = (minCoord - axisCamera) / axisDirn;
+    float t2 = (maxCoord - axisCamera) / axisDirn;
 
     if(t1 > t2) {
         float tmpT = t1;
@@ -259,10 +257,10 @@ __device__ bool intersectAxis(float axisCamera, float axisDirn, float invDirn, f
     return tClosest <= tFarthest;
 }
 
-__device__ bool intersectAABB(const AABB& box, Vec3 camera, Vec3 dirn, Vec3 invDirn, float& tClosest, float& tFarthest) {
-    if(!intersectAxis(camera.x, dirn.x, invDirn.x, box.minPoint.x, box.maxPoint.x, tClosest, tFarthest)) return false;
-    if(!intersectAxis(camera.y, dirn.y, invDirn.y, box.minPoint.y, box.maxPoint.y, tClosest, tFarthest)) return false;
-    if(!intersectAxis(camera.z, dirn.z, invDirn.z, box.minPoint.z, box.maxPoint.z, tClosest, tFarthest)) return false;
+__device__ bool intersectAABB(const AABB& box, Vec3 camera, Vec3 dirn, float& tClosest, float& tFarthest) {
+    if(!intersectAxis(camera.x, dirn.x, box.minPoint.x, box.maxPoint.x, tClosest, tFarthest)) return false;
+    if(!intersectAxis(camera.y, dirn.y, box.minPoint.y, box.maxPoint.y, tClosest, tFarthest)) return false;
+    if(!intersectAxis(camera.z, dirn.z, box.minPoint.z, box.maxPoint.z, tClosest, tFarthest)) return false;
     return true;
 }
 
@@ -290,42 +288,22 @@ __device__ int rayCollisionPoint(const Sphere* scene, Vec3 camera, Vec3 dirn, fl
     int best = -1;
     float closest = 1e30f;
 
-    if(c_floorIndex >= 0) {
-        float t = intersectSphere(
-            scene[c_floorIndex], camera, dirn
-        );
-
-        if(t > eps && t < closest) {
-            closest = t;
-            best = c_floorIndex;
-        }
-    }
 
     if(root == -1) { // No objects
         tClosest = closest;
         return best;
     }
 
-    Vec3 invDirn(dirn.x != 0.0f ? 1.0f / dirn.x : 0.0f, dirn.y != 0.0f ? 1.0f / dirn.y : 0.0f, dirn.z != 0.0f ? 1.0f / dirn.z : 0.0f);
     
-    //DFS through the tree
-    /*
-    int n = num_spheres;
-    int stackSize = 0;
-    while(n > leafSize) {
-        n = (n+1)/2;
-        stackSize++;
-    }
-
-    */
+    // DFS through the tree.
     int stackBVH[STACK_SIZE];
     int i = 0;
     stackBVH[i++] = root;
     while(i > 0) {
         int top = stackBVH[--i];
+        float tEntry = eps, tExit = closest;
+        if(!intersectAABB(tree[top].box, camera, dirn, tEntry, tExit)) continue;
         if(tree[top].count > 0) { //leaf
-            float tEntry = eps, tExit = closest;
-            if(intersectAABB(tree[top].box, camera, dirn, invDirn, tEntry, tExit)) { //passed the test!
                 //check every sphere in leaf range
                 int start = tree[top].start;
                 int end = start + tree[top].count;
@@ -338,32 +316,10 @@ __device__ int rayCollisionPoint(const Sphere* scene, Vec3 camera, Vec3 dirn, fl
                     }
                     
                 }
-            }
         }
         else { //internal node
-            int left = tree[top].left;
-            int right = tree[top].right;
-            float tLeft = eps, tLeftExit = closest;
-            float tRight = eps, tRightExit = closest;
-            bool hitLeft = intersectAABB(tree[left].box, camera, dirn, invDirn, tLeft, tLeftExit);
-            bool hitRight = intersectAABB(tree[right].box, camera, dirn, invDirn, tRight, tRightExit);
-
-            if(hitLeft && hitRight) {
-                if(tLeft < tRight) {
-                    stackBVH[i++] = tree[top].right;
-                    stackBVH[i++] = tree[top].left;
-                }
-                else {
-                    stackBVH[i++] = tree[top].left;
-                    stackBVH[i++] = tree[top].right;
-                }
-            }
-            else if(hitLeft) {
-                stackBVH[i++] = tree[top].left;
-            }
-            else if(hitRight) {
-                stackBVH[i++] = tree[top].right;
-            }
+            stackBVH[i++] = tree[top].right;
+            stackBVH[i++] = tree[top].left;
         }
     }
     tClosest = closest;
@@ -374,17 +330,7 @@ __device__ bool inShadow(const Sphere* scene, Vec3 camera, Vec3 light, int num_s
     Vec3 toLight = light - camera;
     float maxDistance = sqrtf(dot(toLight, toLight));
     Vec3 dirn = normalize(toLight);
-    Vec3 invDirn(dirn.x != 0.0f ? 1.0f / dirn.x : 0.0f, dirn.y != 0.0f ? 1.0f / dirn.y : 0.0f, dirn.z != 0.0f ? 1.0f / dirn.z : 0.0f);
     
-    if(c_floorIndex >= 0) {
-        float t = intersectSphere(
-            scene[c_floorIndex], camera, dirn
-        );
-
-        if(t > eps && t < maxDistance) {
-            return true;
-        }
-    }
 
     if(root == -1) { // No objects
         return false;
@@ -395,9 +341,9 @@ __device__ bool inShadow(const Sphere* scene, Vec3 camera, Vec3 light, int num_s
     stackBVH[i++] = root;
     while(i > 0) {
         int top = stackBVH[--i];
+        float tEntry = eps, tExit = maxDistance;
+        if(!intersectAABB(tree[top].box, camera, dirn, tEntry, tExit)) continue;
         if(tree[top].count > 0) { //leaf
-            float tEntry = eps, tExit = maxDistance;
-            if(intersectAABB(tree[top].box, camera, dirn, invDirn, tEntry, tExit)) { //passed the test!
                 //check every sphere in leaf range
                 int start = tree[top].start;
                 int end = start + tree[top].count;
@@ -409,32 +355,10 @@ __device__ bool inShadow(const Sphere* scene, Vec3 camera, Vec3 light, int num_s
                     }
                     
                 }
-            }
         }
         else { //internal node
-            int left = tree[top].left;
-            int right = tree[top].right;
-            float tLeft = eps, tLeftExit = maxDistance;
-            float tRight = eps, tRightExit = maxDistance;
-            bool hitLeft = intersectAABB(tree[left].box, camera, dirn, invDirn, tLeft, tLeftExit);
-            bool hitRight = intersectAABB(tree[right].box, camera, dirn, invDirn, tRight, tRightExit);
-
-            if(hitLeft && hitRight) {
-                if(tLeft < tRight) {
-                    stackBVH[i++] = tree[top].right;
-                    stackBVH[i++] = tree[top].left;
-                }
-                else {
-                    stackBVH[i++] = tree[top].left;
-                    stackBVH[i++] = tree[top].right;
-                }
-            }
-            else if(hitLeft) {
-                stackBVH[i++] = tree[top].left;
-            }
-            else if(hitRight) {
-                stackBVH[i++] = tree[top].right;
-            }
+            stackBVH[i++] = tree[top].right;
+            stackBVH[i++] = tree[top].left;
         }
     }
     return false;
@@ -574,33 +498,26 @@ int main() {
         h_scene[i] = sph;
     }
 
-    Sphere* scene;
-    cudaErrCheck(cudaMalloc((void**)&scene, sizeof(h_scene)));
-    cudaErrCheck(cudaMemcpy(scene, h_scene, sizeof(h_scene), cudaMemcpyHostToDevice));
+    Sphere* scene = nullptr;
 
     std::vector<int> indices;
     indices.reserve(num_spheres);
 
-    int fIdx = -1;
-
     for(int i = 0; i < num_spheres; i++) {
-        if(h_scene[i].isFloor && fIdx == -1) {
-            fIdx = i;
-        }
-        else {
-            indices.push_back(i);
-        }
+        indices.push_back(i);
     }
 
-    cudaErrCheck(cudaMemcpyToSymbol(c_floorIndex, &fIdx, sizeof(int)));
-
     std::vector<BVHNode> BVHTree;
-
     int root = -1;
     if(!indices.empty()) root = buildTree(h_scene, BVHTree, indices, 0, indices.size());
 
-    int* d_indices;
-    BVHNode* d_tree;
+    if(num_spheres > 0) {
+        cudaErrCheck(cudaMalloc((void**)&scene, num_spheres * sizeof(Sphere)));
+        cudaErrCheck(cudaMemcpy(scene, h_scene, num_spheres * sizeof(Sphere), cudaMemcpyHostToDevice));
+    }
+
+    int* d_indices = nullptr;
+    BVHNode* d_tree = nullptr;
 
     if(!indices.empty()) {
         cudaErrCheck(cudaMalloc((void**)&d_indices, sizeof(int) * indices.size()));
