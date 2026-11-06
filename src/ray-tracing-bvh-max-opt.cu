@@ -10,7 +10,7 @@
 #define bounces 5
 #define eps 0.001f
 #define min_throughput 0.001f
-#define leafSize 4
+#define leafSize 1
 #define STACK_SIZE 16
 
 __constant__ int c_floorIndex;
@@ -310,7 +310,6 @@ __device__ int rayCollisionPoint(const Sphere* scene, Vec3 camera, Vec3 dirn, fl
     int current = root;
     while(true) {
         const BVHNode& node = tree[current];
-        // This node's box passed when selected; do not test it again.
         if(node.count > 0) {
             int end = node.start + node.count;
             for(int sphereIdx = node.start; sphereIdx < end; sphereIdx++) {
@@ -376,7 +375,6 @@ __device__ bool inShadow(const Sphere* scene, Vec3 camera, Vec3 light, int num_s
     int current = root;
     while(true) {
         const BVHNode& node = tree[current];
-        // This node's box passed when selected; do not test it again.
         if(node.count > 0) {
             int end = node.start + node.count;
             for(int sphereIdx = node.start; sphereIdx < end; sphereIdx++) {
@@ -385,7 +383,8 @@ __device__ bool inShadow(const Sphere* scene, Vec3 camera, Vec3 light, int num_s
                     return true;
                 }
             }
-        } else {
+        } 
+        else {
             float tLeft = eps, tLeftExit = maxDistance;
             float tRight = eps, tRightExit = maxDistance;
             bool hitLeft = intersectAABB(tree[node.left].box, camera, dirn, invDirn, tLeft, tLeftExit);
